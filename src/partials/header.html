@@ -1,12 +1,21 @@
 <header>
     <div class="container header-container">
-        <!-- <img src="" alt=""> -->
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">How it’s made?</a></li>
-            <li><a href="#">Our products</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-        <button>Buy now<span></span></button>
+        <picture class="header__picture">
+            <source media="(min-width 1280px)"  srcset="/src/images/header/LogoretinaX2.png 1x, /src/images/header/LogoretinaX2.png 2x"   type="image/png">
+            <source media="(min-width 768px)"  srcset="/src/images/header/LogoretinaX2.png 1x, /src/images/header/LogoretinaX2.png 2x"   type="image/png">
+            <source media="(max-width 767px)"  srcset="/src/images/header/LogoretinaX2.png 1x, /src/images/header/LogoretinaX2.png 2x"   type="image/png">
+                <img src="/src/images/header/LogodescX1.png" alt="logo icecream"> 
+        </picture>
+        
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-list__item"><a href="#" class="nav-list__link">Home</a></li>
+                <li class="nav-list__item"><a href="#" class="nav-list__link">How it’s made?</a></li>
+                <li class="nav-list__item"><a href="#" class="nav-list__link">Our products</a></li>
+                <li class="nav-list__item"><a href="#" class="nav-list__link">Contact</a></li>
+            </ul>
+         </nav>
+        
+        <button class="button-solid header__button">Buy now<span></span></button>
     </div>
 </header>
