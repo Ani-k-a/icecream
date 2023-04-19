@@ -21,17 +21,29 @@
     </p>
     <a href="#" class="offer__link"></a>
   </div>
-  <div class="hero-img">
-    <picture>
-      <img src="/src/images/desktop/hero/more-ice_deskX1.png" alt="" />
-    </picture>
-    <picture>
-      <img src="/src/images/desktop/hero/dots_deskX1.png" alt="" />
-    </picture>
-    <picture>
-      <img src="/src/images/desktop/hero/hero_ice-cream_deskX1.png" alt="" />
-    </picture>
-  </div>
+  <picture class="hero-img1">
+    <source
+      media="(min-width 1280px)"
+      srcset="
+        /src/images/desktop/hero/dots_deskX1.png 1x,
+        /src/images/desktop/hero/dots_deskX2.png 2x
+      "
+      type="image/png"
+    />
+    <source
+      media="(min-width 768px)"
+      srcset="/src/images/tablet/hero/dots_tabl.png 1x"
+      type="image/png"
+    />
+    <source
+      media="(max-width 767px)"
+      srcset="/src/images/mobile/hero/dots_mob.png 1x"
+      type="image/png"
+    />
+    <img src="/src/images/mobile/hero/dots_mob.png" alt="hero dots" />
+  </picture>
+  <picture class="hero-img2"></picture>
+  <picture class="hero-img3"></picture>
 </section>
 
 <!-- <picture class="header__picture">
