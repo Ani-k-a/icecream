@@ -1,2 +1,22 @@
-@import './common';
-@import './example';
+@import './utilits/common';
+@import './utilits/mixins';
+@import './utilits/animation';
+
+@import './variables/colors';
+@import './variables/fonts';
+
+
+@import './base/base';
+@import './base/btn';
+@import './base/container';
+@import './base/title';
+
+@import './conponents/header';
+@import './conponents/hero';
+@import './conponents/products';
+@import './conponents/about';
+@import './conponents/advantages';
+@import './conponents/gallery';
+@import './conponents/customer-revievs';
+@import './conponents/contacts';
+@import './conponents/footer';
