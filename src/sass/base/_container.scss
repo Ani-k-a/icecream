@@ -1,0 +1,17 @@
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 60px 20px;
+
+  @include mq(mobile) {
+    width: $mobile;
+  }
+  @include mq(tablet) {
+    padding: 60px 30px;
+    width: $tablet;
+  }
+  @include mq(desktop) {
+    padding: 60px 15px;
+    width: $desktop;
+  }
+}
