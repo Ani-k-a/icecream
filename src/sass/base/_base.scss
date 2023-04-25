@@ -8,18 +8,30 @@ html {
 }
 
 body{
+  background-image: url(/src/images/background/Bg_mob_X1.jpg);
+  background-size: contain;
   color: $primary-text-color;
   font-family: $primary-font;
   font-size: 12px;
   line-height: 1.76;
+  @include mq(retina){
+    background-image: url(/src/images/background/Bg_mob_X2.jpg);
+  }
   @include mq(tablet) {
+    background-image: url(/src/images/background/Bg_tabl_X1.jpg);
     font-size: 14px;
+    @include mq(retina){
+      background-image: url(/src/images/background/Bg_tabl_X2.jpg);
+    }
   }
 
   @include mq(desktop) {
+    background-image: url(/src/images/background/Bg_desk_X1.jpg);
     font-size: 16px;
+    @include mq(retina){
+      background-image: url(/src/images/background/Bg_desk_X2.jpg);
+    }
   }
-
 }
 
 h1,
@@ -37,9 +49,7 @@ ul {
   margin: 0;
   list-style: none;
 }
-// li {
-//   list-style: none;
-// }
+
 img {
   display: block;
   max-width: 100%;
