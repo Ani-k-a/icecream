@@ -1,0 +1,58 @@
+header {
+    background-color: $primary-bg-color;
+}
+
+.header-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 10px 20px;
+
+    @include mq(tablet) {
+        padding: 20px 30px;
+    }
+
+    @include mq(desktop) {
+        padding: 10px 15px;
+    }
+}
+
+.nav-list {
+    display: none;
+
+    @include mq(desktop) {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    &__item:hover,
+    &__item:focus {
+        color: $yellow-color;
+    }
+
+    &__item:not(:last-child) {
+        @include mq(desktop) {
+            margin-right: 30px;
+        }
+    }
+
+    &__link {
+        font-weight: 700;
+        align-items: center;
+    }
+}
+
+.btn_menu {
+    @include mq(desktop) {
+        display: none;
+    }
+}
+
+.btn_solid {
+    display: none;
+
+    @include mq(tablet) {
+        display: block;
+    }
+}
