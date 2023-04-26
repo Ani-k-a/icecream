@@ -23,7 +23,6 @@ header {
     @include mq(desktop) {
         display: flex;
         justify-content: center;
-        margin-bottom: 10px;
     }
 
     &__item:hover,
