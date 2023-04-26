@@ -1,0 +1,59 @@
+button {
+  padding: 10px 25px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  color: $secondary-text-color;
+  @include mq(desktop) {
+    padding: 10px 35px;
+  }
+}
+
+.btn-solid {
+  background-color: $yellow-color;
+  border: none;
+}
+.btn-solid:hover {
+  background-color: $primary-bg-color;
+}
+.btn-solid:focus {
+  background-color: $primary-bg-color;
+  color: $primary-text-color;
+}
+.btn-solid:disabled {
+  background-color: $gray-btn-color;
+}
+
+.btn-border {
+  background-color: transparent;
+  border: 2px solid $yellow-color;
+}
+.btn-border:hover {
+  border: 2px solid $green-btn-color;
+}
+.btn-border:focus {
+  border: 2px solid $green-btn-color;
+  color: $primary-text-color;
+}
+.btn-border:disabled {
+  border: 2px solid $gray-btn-color;
+}
+
+.btn-nonborder {
+  border: none;
+  background-color: transparent;
+  text-decoration-line: underline;
+  color: $yellow-color;
+  @include mq(notDesktop) {
+    padding: 0;
+  }
+}
+.btn-nonborder:hover {
+  color: $primary-bg-color;
+}
+.btn-nonborder:focus {
+  color: $primary-text-color;
+}
+.btn-nonborder:disabled {
+  color: $gray-btn-color;
+}
