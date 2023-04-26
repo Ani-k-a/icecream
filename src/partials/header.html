@@ -1,13 +1,21 @@
 <header>
     <div class="container header-container">
         <picture class="header__picture">
-            <source media="(min-width: 1200px)"  srcset="images/desktop/header/logo_desk_x1.png 1x , images/desktop/header/logo_desk_x2.png 2x"  type="image/png" >
-            <source media="(min-width: 768px)"  srcset="images/tablet/header/logo_tabl_x1.png 1x , images/tablet/header/logo_tabl_x2.png 2x "  type="image/png" >
-            <source media="(min-width: 480px)"  srcset="images/mobile/header/logo_mob480_x1.png 1x , images/mobile/header/logo_mob480_x2.png 2x "  type="image/png" >
-            <source media="(max-width: 479px)"  srcset="images/mobile/header/logo_mob320_x1.png 1x , images/mobile/header/logo_mob320_x2.png 2x "  type="image/png" >
-                <img src="images/mobile/header/logo_mob320_x1.png" loading="lazy" alt="logo icecream"> 
+            <source media="(min-width: 1200px)"
+                srcset="images/desktop/header/logo_desk_x1.png 1x , images/desktop/header/logo_desk_x2.png 2x"
+                type="image/png">
+            <source media="(min-width: 768px)"
+                srcset="images/tablet/header/logo_tabl_x1.png 1x , images/tablet/header/logo_tabl_x2.png 2x "
+                type="image/png">
+            <source media="(min-width: 480px)"
+                srcset="images/mobile/header/logo_mob480_x1.png 1x , images/mobile/header/logo_mob480_x2.png 2x "
+                type="image/png">
+            <source media="(max-width: 479px)"
+                srcset="images/mobile/header/logo_mob320_x1.png 1x , images/mobile/header/logo_mob320_x2.png 2x "
+                type="image/png">
+            <img src="images/mobile/header/logo_mob320_x1.png" loading="lazy" alt="logo icecream">
         </picture>
-        
+
         <nav class="nav">
             <ul class="nav-list">
                 <li class="nav-list__item"><a href="#hero" class="nav-list__link">Home</a></li>
@@ -15,16 +23,18 @@
                 <li class="nav-list__item"><a href="#products" class="nav-list__link">Our products</a></li>
                 <li class="nav-list__item"><a href="#contacts" class="nav-list__link">Contact</a></li>
             </ul>
-         </nav>
-         <button class="header-btn btn_menu">
-            <svg aria-label="burger-menu" width="32" height="32">
-            <use href="./images/symbol-defs.svg#icon-small_arrow_right"></use>
-            </svg>
-        </button>
-        <button class="header-btn btn-solid">Buy now
-                <svg aria-label="small_arrow" width="12" height="12">
-                <use href="./images/symbol-defs.svg#icon-small_arrow_right"></use>
+        </nav>
+        <div class="burger">
+            <button class="btn-menu">
+                <svg aria-label="burger-menu" width="32" height="22">
+                    <use href="./images/symbol-defs.svg#icon-burger-menu"></use>
                 </svg>
-        </button>
+            </button>
+            <button class="header-btn btn-solid">Buy now
+                <svg class="header-btn__icon" aria-label="small_arrow" width="6" height="10">
+                    <use href="./images/symbol-defs.svg#icon-small_arrow_right"></use>
+                </svg>
+            </button>
+        </div>
     </div>
 </header>

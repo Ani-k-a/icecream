@@ -42,16 +42,43 @@ header {
     }
 }
 
-.btn_menu {
+.burger {
+    @include mq(tablet) {
+        display: flex;
+    }
+}
+
+.btn-menu {
+    background-color: transparent;
+    border: 0px;
+    padding: 0px;
+    margin-right: 36px;
+
     @include mq(desktop) {
         display: none;
     }
 }
 
-.btn_solid {
+.header-btn {
     display: none;
-
+    align-items: center;
     @include mq(tablet) {
         display: block;
     }
+    &__icon{
+        margin-left: 5px;
+    }
+}
+
+.header-btn:hover {
+
+    @include mq(tablet) {
+        border: 1px solid $yellow-color;
+        padding: 9px 24px;
+        
+    }
+    @include mq(desktop){
+        padding: 9px 34px;
+    }
+
 }
