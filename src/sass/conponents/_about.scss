@@ -1,0 +1,136 @@
+.about {
+    background-color: $primary-bg-color;
+}
+
+.about-container {
+    text-align: center;
+}
+
+.about__lable {
+    font-family: $primary-font;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.22;
+    text-transform: uppercase;
+
+    @include mq(tablet) {
+        font-weight: 800;
+        font-size: 22px;
+        letter-spacing: 0.04em;
+    }
+
+    @include mq(desktop) {
+        font-size: 30px;
+    }
+}
+
+.about__title {
+    font-family: $title-font;
+    margin-top: 10px;
+    margin-bottom: 32px;
+    font-size: 36px;
+    line-height: 45px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    @include mq(tablet) {
+        margin-bottom: 72px;
+    }
+
+    @include mq(desktop) {
+        margin-bottom: 82px;
+    }
+}
+
+.about-wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+
+    @include mq(tablet) {
+        flex-direction: row;
+        
+    }
+
+}
+
+.about-picture {
+
+    &__row {
+        position: relative;
+        border-radius: 50%;
+        top: 20px;
+
+        @include mq(tablet) {
+            top: 25px;
+        }
+
+        @include mq(desktop) {
+            top: 40px;
+        }
+    }
+
+    &__circle {
+        background-color: $products-yellow-bg-color;
+        width: 279px;
+        height: 279px;
+        border-radius: 50%;
+        position: absolute;
+
+        @include mq(tablet) {
+            width: 330px;
+            height: 330px;
+        }
+
+        @include mq(desktop) {
+            width: 490px;
+            height: 490px;
+        }
+    }
+
+}
+
+.about-info {
+    display: block;
+    width: 220px;
+    margin-top:40px ;
+
+    @include mq(tablet) {
+        width: 335px;
+        text-align: left;
+        margin-left: 38px;
+        margin-top: 0;
+    }
+
+    @include mq(desktop) {
+        width: 463px;
+        margin-left: 110px;
+    }
+}
+
+.about-list {
+    &__item {
+        letter-spacing: 0.04em;
+        font-size: 12px;
+        @include mq(desktop){
+            font-size: 16px;
+        }
+    }
+    &__item:not(:last-child) {
+        margin-bottom: 8px;
+
+    }
+}
+
+.about_btn {
+    margin-top: 24px;
+
+    @include mq(tablet) {
+        margin-top: 32px;
+    }
+
+    @include mq(desktop) {
+        margin-top: 54px;
+    }
+
+}
