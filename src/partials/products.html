@@ -1,38 +1,38 @@
-<section class="products">
-  <div class="container">
+<section id="products" class="products">
+  <div class="container products_container">
     <p class="products__lable lable">100% natural</p>
     <h2 class="products__title title">products</h2>
 
     <ul class="products-list">
       <li class="products-list__item">
-        <picture class="products-list__picture">
+        <picture >
           <source
-            media="(min-width 1200px)"
+            media="(min-width: 1200px)"
             srcset="
-              images/desktop/products/ice-cream_desk_x1.jpg,
-              images/desktop/products/ice-cream_desk_x2.jpg
+              ./images/desktop/products/ice-cream_desk_x1.jpg,
+              ./images/desktop/products/ice-cream_desk_x2.jpg
             "
             type="image/jpg"
           />
           <source
-            media="(max-width 1199px)"
+            media="(max-width: 1199px)"
             srcset="
-              images/products/ice-cream_tabl_mob_x1.jpg,
-              images/products/ice-cream_tabl_mob_x2.jpg
+              ./images/tablet/products/ice-cream_tabl_mob_x1.jpg,
+              ./images/tablet/products/ice-cream_tabl_mob_x2.jpg
             "
             type="image/jpg"
           />
-          <img
-            src="images/products/ice-cream_tabl_mob_x1.jpg"
+          <img class="products-list__picture"
+            src="./images/tablet/products/ice-cream_tabl_mob_x1.jpg"
             alt="ice cream"
-            width="200"
-            height="200"
+            loading="lazy"
           />
         </picture>
-        <div class="products-list__layer">
+        <div class="products-list__layer products-list__layer_green">
           <!-- через backgroun и закругление -->
         </div>
-        <div class="products-list__card">
+
+        <div class="products-list__card products-list__card_green">
           <h3 class="products-list__title">ice cream</h3>
           <p class="products-list__descriptin">
             Soft ice cream with a delicate taste. Made with milk, cream, sugar
@@ -42,7 +42,7 @@
             <svg
               class="products-list__icon"
               aria-label="weight"
-              width="40"
+              width="42"
               height="16"
             >
               <use href="./images/symbol-defs.svg#icon-big_arrow_right"></use>
@@ -52,36 +52,35 @@
       </li>
 
       <li class="products-list__item">
-        <picture class="products-list__picture">
+        <picture >
           <source
-            media="(min-width 1200px)"
+            media="(min-width: 1200px)"
             srcset="
-              images/desktop/products/ice-coffee_desk_x1.jpg,
-              images/desktop/products/ice-coffee_desk_x2.jpg
+              ./images/desktop/products/ice-coffee_desk_x1.jpg,
+              ./images/desktop/products/ice-coffee_desk_x2.jpg
             "
             type="image/jpg"
           />
           <source
-            media="(max-width 1199px)"
+            media="(max-width: 1199px)"
             srcset="
-              images/products/ice-coffee_tabl_mob_x1.jpg,
-              images/products/ice-coffee_tabl_mob_x2.jpg
+              ./images/tablet/products/ice-coffee_tabl_mob_x1.jpg,
+              ./images/tablet/products/ice-coffee_tabl_mob_x2.jpg
             "
             type="image/jpg"
           />
-          <img
-            src="images/products/ice-coffee_tabl_mob_x1.jpg"
+          <img class="products-list__picture"
+            src="./images/tablet/products/ice-coffee_tabl_mob_x1.jpg"
             alt="ice cream"
-            width="200"
-            height="200"
+            loading="lazy"
           />
         </picture>
 
-        <div class="products-list__layer">
+        <div class="products-list__layer products-list__layer_yellow">
           <!-- через backgroun и закругление -->
         </div>
 
-        <div class="products-list__card">
+        <div class="products-list__card products-list__card_yellow">
           <h3 class="products-list__title">ice coffee</h3>
           <p class="products-list__descriptin">
             Fragrant invigorating drink created from 100% natural ingredients
@@ -91,7 +90,7 @@
             <svg
               class="products-list__icon"
               aria-label="weight"
-              width="40"
+              width="42"
               height="16"
             >
               <use href="./images/symbol-defs.svg#icon-big_arrow_right"></use>
@@ -101,9 +100,9 @@
       </li>
 
       <li class="products-list__item">
-        <picture class="products-list__picture">
+        <picture >
           <source
-            media="(min-width 1200px)"
+            media="(min-width: 1200px)"
             srcset="
               images/desktop/products/milshake_desk_x1.jpg,
               images/desktop/products/milshake_desk_x2.jpg
@@ -111,26 +110,24 @@
             type="image/jpg"
           />
           <source
-            media="(max-width 1199px)"
+            media="(max-width: 1199px)"
             srcset="
-              images/products/milshake_tabl_mob_x1.jpg,
-              images/products/milshake_tabl_mob_x2.jpg
+              images/tablet/products/milshake_tabl_mob_x1.jpg,
+              images/tablet/products/milshake_tabl_mob_x2.jpg
             "
             type="image/jpg"
           />
-          <img
-            src="images/products/milshake_tabl_mob_x1.jpg"
+          <img class="products-list__picture"
+            src="images/tablet/products/milshake_tabl_mob_x1.jpg"
             alt="ice cream"
-            width="200"
-            height="200"
           />
         </picture>
 
-        <div class="products-list__layer">
+        <div class="products-list__layer products-list__layer_orange">
           <!-- через backgroun и закругление -->
         </div>
 
-        <div class="products-list__card">
+        <div class="products-list__card products-list__card_orange">
           <h3 class="products-list__title">milkshakes</h3>
           <p class="products-list__descriptin">
             Sweet drinks based on milk and ice cream, supplemented with syrups,
@@ -140,7 +137,7 @@
             <svg
               class="products-list__icon"
               aria-label="weight"
-              width="40"
+              width="42"
               height="16"
             >
               <use href="./images/symbol-defs.svg#icon-big_arrow_right"></use>
@@ -148,8 +145,6 @@
           </button>
         </div>
       </li>
-
-      <!-- here is a comment -->
     </ul>
   </div>
 </section>
