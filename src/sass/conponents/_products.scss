@@ -1,22 +1,21 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
 .products{
     color: $secondary-text-color;    
 }
 
 .products_container{
     padding-top: 60px;
-    padding-bottom: 60px;
+    padding-bottom: 7px;
     padding-left: 20px;
-    padding-right: 20px;
-    height: auto;
+    padding-right: 20px;    
     margin: auto;
+
+    @include mq(mobile) {
+        padding-left: 80px;
+        padding-right: 80px;  
+        padding-bottom: 60px;     
+    }
     
-    @include mq(tablet) {
+    @include mq(tablet) {        
         padding-left: 32px;
         padding-right: 32px;
     }
@@ -24,10 +23,12 @@
     @include mq(desktop) {
         padding-left: 16px;
         padding-right: 16px;
+        padding-top: 58px;
     }
 }
 
 .products__lable {
+    font-family: $primary-font;
     font-weight: 800;
     font-size: 18px;
     line-height: 1.22;
@@ -37,21 +38,21 @@
     text-align: center;
 
     @include mq(tablet) {
-    font-size: 22px;
-    line-height: 1.23;
+        font-size: 22px;
+        line-height: 1.23;
     }
 
     @include mq(desktop) {
-    font-size: 30px;
+        font-size: 30px;
+        line-height: 1.23;
     }
 }
 
 .products__title {
-    margin-bottom: 40px;
-    
+    margin-bottom: 40px;    
 
     @include mq(tablet) {
-    margin-bottom: 80px;
+        margin-bottom: 80px;
     }
 
     @include mq(desktop) {
@@ -59,35 +60,78 @@
     }
 }
 
+#products-list__last_li{
+    margin-bottom: 0px;
+}
+
 .products-list{
     display: flex; 
     flex-direction: column;
     text-align: center;
-    align-items: center;
+    align-items: center;  
+    
+    @include mq(tablet) {
+        flex-direction: row;
+    }
 
     &__item{
-        position: relative;
-        display: flex; 
+    position: relative;
+    display: flex; 
     flex-direction: column;
     text-align: center;
     align-items: center;
+    height: 528px;
+    margin-bottom: 60px;
+
+    @include mq(mobile) {
+        height: 533px;     
+    }
+
+    @include mq(tablet) {
+        height: 548px;
+        margin-bottom: 0px;
+    }
+
+    @include mq(desktop) {
+        height: 719px;
+        padding: 0px 0px 0px 0px; 
+    }
     }
 
     &__picture{
         position: relative;
         z-index: 1;
-        border-radius: 50%;                    
+        border-radius: 50%; 
+
+        @include mq(tablet) {
+            left: -12px;
+        }
+
+        @include mq(desktop) {
+            width: 302px;
+            height: 302px;
+        }
     }
 
     &__layer{        
         position: absolute;
         z-index: -1;
-        top: 15px;
+        top: 13px;
+        
         border-radius: 50%;
         width: 200px;
         height: 200px;
         box-shadow: 0px 5.41333px 20.3px rgba(0, 0, 0, 0.25);
 
+        @include mq(tablet) {
+            left: 14px;
+        }
+
+        @include mq(desktop) {
+            width: 302px;
+            height: 302px;
+            left: 36px;
+        }
     }
 
     &__layer_green{      
@@ -100,20 +144,33 @@
 
     &__layer_orange{      
         background-color: $products-orange-bg-color;
-
     }
 
     &__card {
         position: relative;
         z-index: -2;
-        top: -100px;
+        top: -90px;
         width: 280px;
-        padding-top: 123px;
-        padding-bottom: 16px;
+        padding-top: 123px;      
         border-radius: 24px;  
         display: flex;
         flex-direction: column;
-        align-items: center;      
+        align-items: center;   
+        
+        @include mq(mobile) {
+            width: 320px;       
+        }
+
+        @include mq(tablet) {
+            width: 224px;
+            margin-right: 29px; 
+            border-radius: 15.7808px;
+        }
+
+        @include mq(desktop) {
+            width: 370px;
+            border-radius: 24px;
+        }
     }
 
     &__card_green {
@@ -129,7 +186,6 @@
     }
 
     &__title {
-        margin-top: 20px;
         margin-bottom: 40px;
         font-family: $primary-font;
         font-weight: 700;
@@ -137,10 +193,22 @@
         line-height: 1.2;
         letter-spacing: 0.04em;
         text-transform: uppercase;
+
+        @include mq(tablet) {
+            font-size: 20px;
+            line-height: 1.23;
+        }
+
+        @include mq(desktop) {
+            margin-bottom: 66px;
+            font-size: 30px;
+            line-height: 1.23;
+        }
     }
 
     &__descriptin {
-        font-family: $primary-font;        
+        font-family: $primary-font;   
+        font-weight: 400;     
         width: 200px;
         height: 100px;
         font-size: 14px;
@@ -148,22 +216,38 @@
         letter-spacing: 0.04em;
         margin-bottom: 101px;
 
+        @include mq(mobile) {
+            margin-bottom: 106px;        
+        }
+
+        @include mq(tablet) {
+            width: 172px;
+            height: 144px;
+            margin-bottom: 81px;
+        }
+
+        @include mq(desktop) {
+            width: 242px;
+            height: 142px;
+            font-size: 14px;
+            margin-bottom: 50px;
+        }
+        
     }
 
     &__button {
         outline: none;
         border: transparent;
-        background-color: transparent;  
+        background-color: transparent;
+        padding: 0px 0px 0px 0px;
+        margin-bottom: 16px; 
+        
+        @include mq(tablet) {
+            margin-bottom: 12px;
+        }
 
-     }
-
-    //  &__icon {
-       
-   
-    //  }
-
-
-
-
-   
+        @include mq(desktop) {
+            margin-bottom: 60px;
+        }
+    }   
 }
