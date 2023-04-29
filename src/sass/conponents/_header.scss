@@ -52,8 +52,10 @@ header {
     background-color: transparent;
     border: 0px;
     padding: 0px;
-    margin-right: 36px;
-
+    
+    @include mq(tablet){
+      margin-right: 36px;  
+    }
     @include mq(desktop) {
         display: none;
     }
