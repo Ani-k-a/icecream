@@ -1,0 +1,64 @@
+.hero {
+  background-color: $primary-bg-color;
+}
+
+.hero-container {
+  height: 100vh;
+  margin: 0;
+  padding: 100px 20px 0px 20px;
+  position: relative;
+}
+
+h1 {
+font-family: 'Seymour One';
+font-weight: 400;
+font-size: 26px;
+line-height: 1.25;
+letter-spacing: 0.04em;
+text-transform: uppercase;
+
+padding: 30px 0px 30px 0px;
+}
+
+h1 > span {
+  font-size: 34px;
+}
+
+.hero-content__button{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.hero-content__button li:not(:last-child) {
+  margin-right: 12px;
+}
+
+.establishments {
+  display: none;
+}
+
+.offer {
+  display: none;
+}
+
+.offer__btn {
+  display: none;
+}
+
+.hero-img2{
+  position: relative;
+  z-index: 1;
+  bottom: 0;
+  
+  
+}
+
+.hero-img2 img{
+  max-width: none;
+}
+
+.hero-img3 {
+  position: absolute;
+}
