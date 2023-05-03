@@ -2,23 +2,6 @@
   color: $secondary-text-color;
 }
 
-.products_container {
-  padding: 60px 20px;
-  margin: auto;
-
-  @include mq(mobile) {
-    padding: 60px 80px;
-  }
-
-  @include mq(tablet) {
-    padding: 60px 32px;
-  }
-
-  @include mq(desktop) {
-    padding: 60px 16px;
-  }
-}
-
 .products__lable {
   font-family: $primary-font;
   font-weight: 800;
@@ -51,8 +34,8 @@
   }
 }
 
-.products-list__item:not(:last-child){
-   @include mq(tablet) {
+.products-list__item:not(:last-child) {
+  @include mq(tablet) {
     margin-right: 15px;
   }
 
@@ -77,14 +60,17 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 170px;
+    width: 100%;
+    max-width: 320px;
 
     @include mq(tablet) {
+      width: calc((100% - 2 * 15px) / 3);
       margin-bottom: 0px;
-      margin-right: 16px;
     }
 
     @include mq(desktop) {
-      margin-right: 30px;
+    //   width: calc((100% - 2 * 30px) / 3);
+      width: 535px;
     }
   }
 
@@ -92,23 +78,17 @@
     position: absolute;
     top: -112px;
     z-index: 1;
-    // border-radius: 50%;
 
     @include mq(mobile) {
-    //   left: 60px;
       top: -106px;
     }
 
     @include mq(tablet) {
-    //   left: 12px;
       top: -110px;
     }
 
     @include mq(desktop) {
-      width: 302px;
-      height: 302px;
       top: -190px;
-    //   left: 36px;
     }
   }
 
@@ -118,7 +98,6 @@
 
   &__layer {
     position: absolute;
-    z-index: -1;
     top: -100px;
     border-radius: 50%;
     width: 200px;
@@ -130,14 +109,12 @@
     }
 
     @include mq(tablet) {
-      left: 12px;
       top: -98px;
     }
 
     @include mq(desktop) {
       width: 302px;
       height: 302px;
-      left: 36px;
       top: -170px;
     }
   }
@@ -176,28 +153,34 @@
   }
 
   &__card {
+    width: 100%;
+    height:428px;
     border-radius: 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     padding: 120px 40px 16px 40px;
 
-    @include mq(mobile-only) {
-        min-width: 280px;
-        max-width: 320px;
-    }  
+    // @include mq(mobile-only) {
+    //   min-width: 280px;
+    //   max-width: 320px;
+    // }
 
     @include mq(mobile) {
+      height: 428px;
       padding: 120px 70px 16px 70px;
     }
 
     @include mq(tablet) {
       border-radius: 15.8px;
       padding: 120px 26px 12px 26px;
+      
     }
 
     @include mq(desktop) {
-      padding: 164px 64px 60px 64px;
+      height: 536px;
+      padding: 164px 60px 60px 60px;
       border-radius: 24px;
     }
   }
@@ -240,30 +223,21 @@
     }
   }
 
-  &__descriptin {
+  &__description {
     font-family: $primary-font;
     font-weight: 400;
     min-height: 148px;
     font-size: 14px;
     line-height: 176%;
     letter-spacing: 0.04em;
-    margin-bottom: 50px;
-
+    
     @include mq(mobile) {
-      margin-bottom: 70px;
       min-height: 100px;
     }
 
-    @include mq(tablet) {
-      // min-height: 100px;  не работает
-      height: 144px;
-      margin-bottom: 78px;
-    }
-
     @include mq(desktop) {
-      min-heightt: 142px;
+      min-height: 142px;
       font-size: 16px;
-      margin-bottom: 52px;
     }
   }
 
@@ -271,6 +245,5 @@
     outline: none;
     border: transparent;
     background-color: transparent;
-    // padding: 0px 0px 0px 0px;
   }
 }
