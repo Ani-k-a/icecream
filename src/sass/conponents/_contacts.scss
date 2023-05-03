@@ -149,24 +149,3 @@
   padding-bottom: 12px;
   width: 196px;
 }
-
-#contacts-buttons__locations > span {
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
-    drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-}
-
-#contacts-buttons__locations > span,
-#contacts-buttons__franchise > span {
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
-    drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-}
-
-#contacts-buttons__locations {
-  background-color: $yellow-color;
-  border: none;
-}
-
-#contacts-buttons__franchise {
-  border: 3px solid $yellow-color;
-  background-color: $primary-bg-color;
-}
