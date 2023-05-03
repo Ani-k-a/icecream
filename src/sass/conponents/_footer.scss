@@ -14,11 +14,14 @@
 
 .footer-title {
   width: 232px;
-
   font-family: 'Montserrat';
   font-weight: 700;
   line-height: 1.22;
   text-transform: uppercase;
+
+  @include mq(mobile-only) {
+    margin-bottom: 60px;
+  }
 
   @include mq(tablet) {
     flex: 1;
