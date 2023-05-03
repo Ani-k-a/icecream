@@ -50,8 +50,9 @@ header {
 
 .btn-menu {
     background-color: transparent;
-    border: 0px;
-    padding: 0px;
+    border: 0;
+    padding:0;
+    fill: $primary-text-color;
     
     @include mq(tablet){
       margin-right: 36px;  
@@ -66,21 +67,24 @@ header {
     align-items: center;
     @include mq(tablet) {
         display: block;
+        padding: 12px 36px; 
     }
     &__icon{
         margin-left: 5px;
     }
 }
 
-.header-btn:hover {
-
+.header-btn:hover,
+.header-btn:focus{
     @include mq(tablet) {
         border: 1px solid $yellow-color;
-        padding: 9px 24px;
-        
+        padding: 11px 35px;
     }
-    @include mq(desktop){
-        padding: 9px 34px;
+  
+}
+.header-btn:active{
+    @include mq(tablet) {
+        border: 1px solid $footer-text-colore;
+        padding: 11px 35px;
     }
-
 }
