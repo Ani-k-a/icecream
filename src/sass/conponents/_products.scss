@@ -1,253 +1,276 @@
-.products{
-    color: $secondary-text-color;    
+.products {
+  color: $secondary-text-color;
 }
 
-.products_container{
-    padding-top: 60px;
-    padding-bottom: 7px;
-    padding-left: 20px;
-    padding-right: 20px;    
-    margin: auto;
+.products_container {
+  padding: 60px 20px;
+  margin: auto;
 
-    @include mq(mobile) {
-        padding-left: 80px;
-        padding-right: 80px;  
-        padding-bottom: 60px;     
-    }
-    
-    @include mq(tablet) {        
-        padding-left: 32px;
-        padding-right: 32px;
-    }
+  @include mq(mobile) {
+    padding: 60px 80px;
+  }
 
-    @include mq(desktop) {
-        padding-left: 16px;
-        padding-right: 16px;
-        padding-top: 58px;
-    }
+  @include mq(tablet) {
+    padding: 60px 32px;
+  }
+
+  @include mq(desktop) {
+    padding: 60px 16px;
+  }
 }
 
 .products__lable {
-    font-family: $primary-font;
-    font-weight: 800;
-    font-size: 18px;
-    line-height: 1.22;
-    text-align: center;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-    text-align: center;
+  font-family: $primary-font;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1.22;
+  text-align: center;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 12px;
 
-    @include mq(tablet) {
-        font-size: 22px;
-        line-height: 1.23;
-    }
+  @include mq(tablet) {
+    font-size: 22px;
+    line-height: 1.23;
+  }
 
-    @include mq(desktop) {
-        font-size: 30px;
-        line-height: 1.23;
-    }
+  @include mq(desktop) {
+    font-size: 30px;
+  }
 }
 
 .products__title {
-    margin-bottom: 40px;    
+  margin-bottom: 150px;
+
+  @include mq(tablet) {
+    margin-bottom: 180px;
+  }
+
+  @include mq(desktop) {
+    margin-bottom: 270px;
+  }
+}
+
+.products-list__item:not(:last-child){
+   @include mq(tablet) {
+    margin-right: 15px;
+  }
+
+  @include mq(desktop) {
+    margin-right: 30px;
+  }
+}
+
+.products-list {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+
+  @include mq(tablet) {
+    flex-direction: row;
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 170px;
 
     @include mq(tablet) {
-        margin-bottom: 80px;
+      margin-bottom: 0px;
+      margin-right: 16px;
     }
 
     @include mq(desktop) {
-        margin-bottom: 120px;
+      margin-right: 30px;
     }
-}
+  }
 
-#products-list__last_li{
-    margin-bottom: 0px;
-}
-
-.products-list{
-    display: flex; 
-    flex-direction: column;
-    text-align: center;
-    align-items: center;  
-    
-    @include mq(tablet) {
-        flex-direction: row;
-    }
-
-    &__item{
-    position: relative;
-    display: flex; 
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    height: 528px;
-    margin-bottom: 60px;
+  &__picture {
+    position: absolute;
+    top: -112px;
+    z-index: 1;
+    // border-radius: 50%;
 
     @include mq(mobile) {
-        height: 533px;     
+    //   left: 60px;
+      top: -106px;
     }
 
     @include mq(tablet) {
-        height: 548px;
-        margin-bottom: 0px;
+    //   left: 12px;
+      top: -110px;
     }
 
     @include mq(desktop) {
-        height: 719px;
-        padding: 0px 0px 0px 0px; 
+      width: 302px;
+      height: 302px;
+      top: -190px;
+    //   left: 36px;
     }
-    }
+  }
 
-    &__picture{
-        position: relative;
-        z-index: 1;
-        border-radius: 50%; 
+  &__picture_img {
+    border-radius: 50%;
+  }
 
-        @include mq(tablet) {
-            left: -12px;
-        }
+  &__layer {
+    position: absolute;
+    z-index: -1;
+    top: -100px;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    box-shadow: 0px 5.41333px 20.3px rgba(0, 0, 0, 0.25);
 
-        @include mq(desktop) {
-            width: 302px;
-            height: 302px;
-        }
-    }
-
-    &__layer{        
-        position: absolute;
-        z-index: -1;
-        top: 13px;
-        
-        border-radius: 50%;
-        width: 200px;
-        height: 200px;
-        box-shadow: 0px 5.41333px 20.3px rgba(0, 0, 0, 0.25);
-
-        @include mq(tablet) {
-            left: 14px;
-        }
-
-        @include mq(desktop) {
-            width: 302px;
-            height: 302px;
-            left: 36px;
-        }
+    @include mq(mobile) {
+      top: -95px;
     }
 
-    &__layer_green{      
-        background-color: $products-green-bg-color;
+    @include mq(tablet) {
+      left: 12px;
+      top: -98px;
     }
 
-    &__layer_yellow{      
-        background-color: $products-yellow-bg-color;
+    @include mq(desktop) {
+      width: 302px;
+      height: 302px;
+      left: 36px;
+      top: -170px;
+    }
+  }
+
+  &__layer_green {
+    background-color: $products-green-bg-color;
+    background: linear-gradient(
+        0deg,
+        rgba(156, 190, 143, 0.7),
+        rgba(156, 190, 143, 0.7)
+      ),
+      #d9d9d9;
+    box-shadow: 0px 5.34219px 20.0332px rgba(10, 136, 23, 0.25);
+  }
+
+  &__layer_yellow {
+    background-color: $products-yellow-bg-color;
+    background: linear-gradient(
+        0deg,
+        rgba(248, 210, 78, 0.7),
+        rgba(248, 210, 78, 0.7)
+      ),
+      #d9d9d9;
+    box-shadow: 0px 5.40397px 20.2649px rgba(153, 114, 23, 0.25);
+  }
+
+  &__layer_orange {
+    background-color: $products-orange-bg-color;
+    background: linear-gradient(
+        0deg,
+        rgba(213, 117, 63, 0.7),
+        rgba(213, 117, 63, 0.7)
+      ),
+      #d9d9d9;
+    box-shadow: 0px 5.41333px 20.3px rgba(0, 0, 0, 0.25);
+  }
+
+  &__card {
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 120px 40px 16px 40px;
+
+    @include mq(mobile-only) {
+        min-width: 280px;
+        max-width: 320px;
+    }  
+
+    @include mq(mobile) {
+      padding: 120px 70px 16px 70px;
     }
 
-    &__layer_orange{      
-        background-color: $products-orange-bg-color;
+    @include mq(tablet) {
+      border-radius: 15.8px;
+      padding: 120px 26px 12px 26px;
     }
 
-    &__card {
-        position: relative;
-        z-index: -2;
-        top: -90px;
-        width: 280px;
-        padding-top: 123px;      
-        border-radius: 24px;  
-        display: flex;
-        flex-direction: column;
-        align-items: center;   
-        
-        @include mq(mobile) {
-            width: 320px;       
-        }
+    @include mq(desktop) {
+      padding: 164px 64px 60px 64px;
+      border-radius: 24px;
+    }
+  }
 
-        @include mq(tablet) {
-            width: 224px;
-            margin-right: 29px; 
-            border-radius: 15.7808px;
-        }
+  &__card_green {
+    background-color: $products-green-bg-color;
+  }
 
-        @include mq(desktop) {
-            width: 370px;
-            border-radius: 24px;
-        }
+  &__card_yellow {
+    background-color: $products-yellow-bg-color;
+  }
+
+  &__card_orange {
+    background-color: $products-orange-bg-color;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+    font-family: $primary-font;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+
+    @include mq(mobile) {
+      margin-bottom: 36px;
     }
 
-    &__card_green {
-        background-color: $products-green-bg-color;
+    @include mq(tablet) {
+      font-size: 22px;
+      line-height: 1.23;
+      margin-bottom: 38px;
     }
 
-    &__card_yellow {
-        background-color: $products-yellow-bg-color;
+    @include mq(desktop) {
+      margin-bottom: 66px;
+      font-size: 30px;
+      line-height: 1.23;
+    }
+  }
+
+  &__descriptin {
+    font-family: $primary-font;
+    font-weight: 400;
+    min-height: 148px;
+    font-size: 14px;
+    line-height: 176%;
+    letter-spacing: 0.04em;
+    margin-bottom: 50px;
+
+    @include mq(mobile) {
+      margin-bottom: 70px;
+      min-height: 100px;
     }
 
-    &__card_orange {
-        background-color: $products-orange-bg-color;
+    @include mq(tablet) {
+      // min-height: 100px;  не работает
+      height: 144px;
+      margin-bottom: 78px;
     }
 
-    &__title {
-        margin-bottom: 40px;
-        font-family: $primary-font;
-        font-weight: 700;
-        font-size: 20px;
-        line-height: 1.2;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-
-        @include mq(tablet) {
-            font-size: 20px;
-            line-height: 1.23;
-        }
-
-        @include mq(desktop) {
-            margin-bottom: 66px;
-            font-size: 30px;
-            line-height: 1.23;
-        }
+    @include mq(desktop) {
+      min-heightt: 142px;
+      font-size: 16px;
+      margin-bottom: 52px;
     }
+  }
 
-    &__descriptin {
-        font-family: $primary-font;   
-        font-weight: 400;     
-        width: 200px;
-        height: 100px;
-        font-size: 14px;
-        line-height: 176%;               
-        letter-spacing: 0.04em;
-        margin-bottom: 101px;
-
-        @include mq(mobile) {
-            margin-bottom: 106px;        
-        }
-
-        @include mq(tablet) {
-            width: 172px;
-            height: 144px;
-            margin-bottom: 81px;
-        }
-
-        @include mq(desktop) {
-            width: 242px;
-            height: 142px;
-            font-size: 14px;
-            margin-bottom: 50px;
-        }
-        
-    }
-
-    &__button {
-        outline: none;
-        border: transparent;
-        background-color: transparent;
-        padding: 0px 0px 0px 0px;
-        margin-bottom: 16px; 
-        
-        @include mq(tablet) {
-            margin-bottom: 12px;
-        }
-
-        @include mq(desktop) {
-            margin-bottom: 60px;
-        }
-    }   
+  &__button {
+    outline: none;
+    border: transparent;
+    background-color: transparent;
+    // padding: 0px 0px 0px 0px;
+  }
 }
