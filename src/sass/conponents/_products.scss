@@ -61,7 +61,10 @@
     align-items: center;
     margin-bottom: 170px;
     width: 100%;
-    max-width: 320px;
+
+    @include mq(mobile-only) {
+        max-width: 320px;
+    }
 
     @include mq(tablet) {
       width: calc((100% - 2 * 15px) / 3);
@@ -69,8 +72,7 @@
     }
 
     @include mq(desktop) {
-    //   width: calc((100% - 2 * 30px) / 3);
-      width: 535px;
+      width: calc((100% - 2 * 30px) / 3);
     }
   }
 
@@ -162,10 +164,7 @@
     justify-content: space-between;
     padding: 120px 40px 16px 40px;
 
-    // @include mq(mobile-only) {
-    //   min-width: 280px;
-    //   max-width: 320px;
-    // }
+    
 
     @include mq(mobile) {
       height: 428px;
