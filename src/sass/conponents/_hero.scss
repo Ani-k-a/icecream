@@ -3,10 +3,14 @@
 }
 
 .hero-container {
-  height: 100vh;
-  margin: 0;
-  padding: 100px 20px 0px 20px;
   position: relative;
+
+  @include mq(notTablet) {
+    height: 100vh;
+    margin: 0;
+    padding: 100px 20px 0px 20px;
+  }
+  
 }
 
 h1 {
@@ -48,11 +52,10 @@ h1 > span {
 }
 
 .hero-img2{
-  position: relative;
   z-index: 1;
-  bottom: 0;
-  
-  
+  position: relative;
+  bottom: -40%;
+  left: -20px;
 }
 
 .hero-img2 img{
@@ -60,5 +63,8 @@ h1 > span {
 }
 
 .hero-img3 {
-  position: absolute;
+  position: relative;
+  z-index: 2;
+  bottom: 6%;
+  left: 25%;
 }
