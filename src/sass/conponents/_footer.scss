@@ -1,13 +1,19 @@
 .footer {
   background-color: $primary-bg-color;
 }
-.container {
-  padding: 20px;
+
+.footer_container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  @include mq(desktop){
+    padding: 0 16px;
+  }
 }
 
 .footer-title {
   width: 232px;
-  margin-bottom: 60px;
 
   font-family: 'Montserrat';
   font-weight: 700;
@@ -57,24 +63,38 @@
 }
 
 .footer-content {
+  padding: 30px 20px 40px 20px;
+
   @include mq(tablet) {
     width: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 20px 30px 30px 30px;
+  }
+
+  @include mq(desktop){
+    padding: 60px 20px 40px 20px;
   }
 }
 .social {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  margin-bottom: 40px;
   flex: 1;
 }
 
 .social__list {
   display: flex;
   margin-bottom: 20px;
+
+  @include mq(tablet) {
+    margin-bottom: 35px;
+  }
+
+  @include mq(desktop) {
+    margin-bottom: 40px;
+  }
 }
 
 .social__item {
@@ -86,6 +106,10 @@
 
 .social__item:not(:last-child) {
   margin-right: 20px;
+
+  @include mq (tablet) {
+    margin-right: 30px;
+  }
 }
 
 .social__link {
@@ -116,26 +140,44 @@
   color: $primary-text-color;
 }
 
-.copyright {
+.copyright__line {
+  border: 1px solid #e1e1e1;
+}
+
+.copyright__text {
   color: $footer-text-colore;
   font-family: 'Montserrat';
   font-weight: 700;
   font-size: 14px;
   line-height: 1.5;
   text-align: center;
-
-  padding-top: 20px;
-  border-top: 1px solid #e1e1e1;
+  padding: 20px;
 
   @include mq(mobile) {
-    padding-left: 70px;
-    padding-right: 70px;
+    padding: 20px 70px;
   }
 
   @include mq(desktop) {
     font-size: 12px;
     line-height: 1.8;
     letter-spacing: 0.02em;
-    padding: 20px 0 0 0;
+
+  }
+}
+
+.btn-nonborder:hover,
+.btn-nonborder:focus {
+  color: $footer-text-colore;
+  cursor: pointer;
+}
+
+.btn-copyright {
+  margin: 0px 0px 0px 2px;
+  padding: 0;
+  text-decoration: none;
+  font-size: 14px;
+
+  @include mq(tablet) {
+    font-size: 12px;
   }
 }
