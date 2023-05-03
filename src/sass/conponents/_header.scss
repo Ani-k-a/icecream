@@ -1,4 +1,7 @@
 header {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
     background-color: $primary-bg-color;
 }
 
@@ -7,13 +10,18 @@ header {
     align-items: flex-end;
     justify-content: space-between;
     padding: 10px 20px;
+    
 
-    @include mq(tablet) {
-        padding: 20px 30px;
+    @include mq(mobile){
+        padding: 15px 20px;
     }
 
+    @include mq(tablet) {
+        padding: 20px 30px ;
+    }
+    
     @include mq(desktop) {
-        padding: 10px 15px;
+        padding: 15px 20px ;
     }
 }
 
