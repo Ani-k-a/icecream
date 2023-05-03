@@ -79,6 +79,7 @@ header {
     }
     &__icon{
         margin-left: 5px;
+        fill:inherit;
     }
 }
 
@@ -90,9 +91,11 @@ header {
     }
   
 }
-.header-btn:active{
-    @include mq(tablet) {
-        border: 1px solid $footer-text-colore;
-        padding: 11px 35px;
-    }
-}
+
+
+// .header-btn:active{
+//     @include mq(tablet) {
+//         border: 1px solid $footer-text-colore;
+//         padding: 11px 35px;
+//     }
+// }
