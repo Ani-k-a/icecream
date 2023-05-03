@@ -3,13 +3,17 @@
 }
 
 .footer_container {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-
+  
+  @include mq(notTablet) {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
   @include mq(desktop){
     padding: 0 16px;
   }
+
+  
 }
 
 .footer-title {

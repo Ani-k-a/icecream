@@ -21,6 +21,13 @@
         }
     }
 
+    @else if $range==notTablet {
+        @media screen and (max-width: #{$tablet - 0.02}) {
+          @content;
+        }
+        
+      }
+
     @else if $range==tablet {
         @media screen and (min-width: $tablet) {
             @content;
