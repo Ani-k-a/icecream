@@ -3,17 +3,14 @@
 }
 
 .footer_container {
-  
-  @include mq(notTablet) {
+  @include mq(mobile-only) {
     width: 100%;
     margin: 0;
     padding: 0;
   }
-  @include mq(desktop){
+  @include mq(desktop) {
     padding: 0 16px;
   }
-
-  
 }
 
 .footer-title {
@@ -45,7 +42,7 @@
     width: 352px;
   }
 
-  @include mq(desktop){
+  @include mq(desktop) {
     font-weight: 400;
     font-size: 30px;
     letter-spacing: 0.04em;
@@ -80,7 +77,7 @@
     padding: 20px 30px 30px 30px;
   }
 
-  @include mq(desktop){
+  @include mq(desktop) {
     padding: 60px 20px 40px 20px;
   }
 }
@@ -114,7 +111,7 @@
 .social__item:not(:last-child) {
   margin-right: 20px;
 
-  @include mq (tablet) {
+  @include mq(tablet) {
     margin-right: 30px;
   }
 }
@@ -168,7 +165,6 @@
     font-size: 12px;
     line-height: 1.8;
     letter-spacing: 0.02em;
-
   }
 }
 

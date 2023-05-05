@@ -1,48 +1,4 @@
-const state = {
-    dates: [
-        {
-            img: "https://via.placeholder.com/85x85",
-            name: "Emily",
-            description: "I love visiting your cafe. You prepare the most delicious ice cream in Los Angeles! In addition, you have beautiful serving, cozy atmosphere and polite staff.",
-            address: "Emily, Los Angeles"
-        },
-        {
-            img: "https://via.placeholder.com/85x85",
-            name: "Bryan",
-            description: "Every day we come to you with friends after classes in college. We love your ice cream and casual atmosphere!",
-            address: "Bryan, New-York"
-        },
-        {
-            img: "https://via.placeholder.com/85x85",
-            name: "Diana",
-            description: "Ice cream is my passion! I love your chocolate hazelnut ice cream! And I really like the excellent service - always served politely and quickly!",
-            address: "Diana, Chicago"
-        },
-        {
-            img: "https://via.placeholder.com/85x85",
-            name: "Bob",
-            description: "I love visiting your cafe. You prepare the most delicious ice cream in Los Angeles! In addition, you have beautiful serving, cozy atmosphere and polite staff.",
-            address: "Bob, San Francisco"
-        },
-        {
-            img: "https://via.placeholder.com/85x85",
-            name: "Melissa",
-            description: "Every day we come to you with friends after classes in college. We love your ice cream and casual atmosphere!",
-            address: "Melissa, San Diego"
-        },
-        {
-            img: "https://via.placeholder.com/85x85",
-            name: "Alex",
-            description: "Ice cream is my passion! I love your chocolate hazelnut ice cream! And I really like the excellent service - always served politely and quickly!",
-            address: "Alex, Austin"
-        }
-
-    ],
-
-    curent: 0,
-
-};
-
+import { state } from './customer-revievs-state';
 
 const ref = {
     slider: document.querySelector(".slider")
@@ -51,10 +7,10 @@ const ref = {
 
 let timerId;
 
+const createCardItem = (i) => {
+    const objectInfo = state.dates[i]
+    const { img, name, description, address } = objectInfo;
 
-
-const createCardItem = (index) => {
-    const { img, name, description, address } = state.dates[index];
     const sliderBlock = document.createElement('div');
     sliderBlock.classList.add('slider__block');
 
@@ -85,12 +41,12 @@ const createCardItem = (index) => {
 
     sliderBlock.append(sliderDescrBlock, btnBlock);
 
-    if (state.curent === 0) {
+    if (state.current === 0) {
         btnLeft.classList.add('active-btn');
         btnRight.classList.remove('active-btn');
         btnCenter.classList.remove('active-btn');
 
-    } else if (state.curent === state.dates.length - 1) {
+    } else if (state.current === state.dates.length - 1) {
         btnRight.classList.add('active-btn');
         btnCenter.classList.remove('active-btn');
         btnLeft.classList.remove('active-btn');
@@ -108,43 +64,44 @@ const createCardItem = (index) => {
 }
 
 const onLeftBtn = () => {
-    clearTimeout(timerId);
-    return state.curent - 1;
+    (state.current > 0) && (state.current -= 1);
+    startRenderSlider(0);
 }
 const onRightBtn = () => {
-    clearTimeout(timerId);
-    return state.curent + 1;
+
+    (state.current < state.dates.length - 1) && (state.current += 1);
+    startRenderSlider(0);
 }
 const onMiddleBtn = () => {
-
+    state.current = Math.floor((state.dates.length - 1) / 2);
+    startRenderSlider(0);
 }
 
 const render = () => {
     ref.slider.replaceChildren();
-    ref.slider.append(createCardItem(state.curent));
+    ref.slider.append(createCardItem(state.current));
 }
 
-const startRenderSlider = () => {
+const startRenderSlider = (renderNum = 1) => {
+    clearTimeout(timerId);
     let timeout = null;
+    stateValue = state.current
 
-    for (let i = state.curent; i <= state.dates.length; i++) {
-        timeout += 5000 * i;
+    for (let i = 0; i <= state.dates.length - stateValue; i++) {
+        timeout = renderNum === 0 ? timeout + 1000 * i : timeout + 1000 * (i + 1);
         timerId = setTimeout(() => {
 
-            if (i === (state.dates.length)) {
-
+            if (state.current === state.dates.length) {
+                state.current = 0;
                 clearTimeout(timerId);
-                state.curent = 0;
-                startRenderSlider()
+                startRenderSlider(1)
             } else {
                 render();
-                state.curent += 1;
+                state.current += 1;
             }
-
-
         }, timeout);
-
     }
 }
 
-startRenderSlider(state.curent);
+
+startRenderSlider(0);

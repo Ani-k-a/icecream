@@ -6,12 +6,13 @@
 @import './variables/colors';
 @import './variables/fonts';
 
-
 @import './base/base';
 @import './base/btn';
 @import './base/container';
 @import './base/title';
 @import './base/visually_hidden_titles';
+@import './base/modal-window';
+@import './base/disabled-scroll';
 
 @import './conponents/header';
 @import './conponents/hero';
@@ -22,3 +23,4 @@
 @import './conponents/customer-revievs';
 @import './conponents/contacts';
 @import './conponents/footer';
+@import './conponents/footer-modal-team';
