@@ -1,4 +1,7 @@
 header {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
     background-color: $primary-bg-color;
 }
 
@@ -7,13 +10,18 @@ header {
     align-items: flex-end;
     justify-content: space-between;
     padding: 10px 20px;
+    
 
-    @include mq(tablet) {
-        padding: 20px 30px;
+    @include mq(mobile){
+        padding: 15px 20px;
     }
 
+    @include mq(tablet) {
+        padding: 20px 30px ;
+    }
+    
     @include mq(desktop) {
-        padding: 10px 15px;
+        padding: 15px 20px ;
     }
 }
 
@@ -50,8 +58,9 @@ header {
 
 .btn-menu {
     background-color: transparent;
-    border: 0px;
-    padding: 0px;
+    border: 0;
+    padding:0;
+    fill: $primary-text-color;
     
     @include mq(tablet){
       margin-right: 36px;  
@@ -66,21 +75,27 @@ header {
     align-items: center;
     @include mq(tablet) {
         display: block;
+        padding: 12px 36px; 
     }
     &__icon{
         margin-left: 5px;
+        fill:inherit;
     }
 }
 
-.header-btn:hover {
-
+.header-btn:hover,
+.header-btn:focus{
     @include mq(tablet) {
         border: 1px solid $yellow-color;
-        padding: 9px 24px;
-        
+        padding: 11px 35px;
     }
-    @include mq(desktop){
-        padding: 9px 34px;
-    }
-
+  
 }
+
+
+// .header-btn:active{
+//     @include mq(tablet) {
+//         border: 1px solid $footer-text-colore;
+//         padding: 11px 35px;
+//     }
+// }

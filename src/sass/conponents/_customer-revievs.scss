@@ -1,0 +1,77 @@
+.revievs_container {
+  padding-top: 80px;
+  padding-bottom: 60px;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  @include mq(tablet) {
+    padding: 100px 30px 80px 30px;
+  }
+  @include mq(desktop) {
+    padding: 140px 115px 100px 115px;
+  }
+}
+
+.slider {
+  width: 100%;
+}
+
+.slider__description {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.slider .slider__img {
+  border-radius: 50px;
+  margin-bottom: 30px;
+}
+.slider__info {
+  display: flex;
+  align-items: center;
+  background-color: $primary-bg-color;
+  border-radius: 24px;
+  padding: 35px 40px;
+  margin-bottom: 30px;
+  font-size: 16px;
+  width: 260px;
+  @include mq(mobile-only) {
+    min-height: 300px;
+  }
+
+  @include mq(tablet) {
+    padding: 40px 100px;
+    height: 140px;
+    width: 100%;
+  }
+}
+.slider__address {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: $secondary-text-color;
+  @include mq(tablet) {
+    margin-bottom: 30px;
+  }
+}
+.slider__btns {
+  display: flex;
+  justify-content: center;
+}
+
+.slider-btn:not(:last-child) {
+  margin-right: 10px;
+}
+
+.slider-btn {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50px;
+  background-color: $gray-btn-color;
+}
+
+.active-btn {
+  background-color: $primary-bg-color;
+}

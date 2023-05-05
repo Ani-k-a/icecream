@@ -15,10 +15,13 @@ button {
 }
 .btn-solid:hover {
   background-color: $primary-bg-color;
+  border: 1px solid $footer-text-colore;
 }
 .btn-solid:focus {
   background-color: $primary-bg-color;
   color: $primary-text-color;
+  border: 1px solid $footer-text-colore;
+  fill: $primary-text-color;
 }
 .btn-solid:disabled {
   background-color: $gray-btn-color;
@@ -34,6 +37,7 @@ button {
 .btn-border:focus {
   border: 2px solid $green-btn-color;
   color: $primary-text-color;
+  fill: $primary-text-color;
 }
 .btn-border:disabled {
   border: 2px solid $gray-btn-color;
@@ -56,4 +60,17 @@ button {
 }
 .btn-nonborder:disabled {
   color: $gray-btn-color;
+}
+
+// button close modal window
+.btn-close {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  border: none;
+  fill: $secondary-text-color;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  background-color: transparent;
 }

@@ -124,9 +124,12 @@
 
 .about-btn {
     display:flex;
+    margin: auto;
     margin-top: 24px;
     align-items: center;
+    padding: 12px 34px;
     @include mq(tablet) {
+        margin: 0;
         margin-top: 32px;
     }
 
@@ -137,5 +140,15 @@
     &__icon{
         margin-left: 8px;
     }
-
+}
+.about-btn:hover,
+.about-btn:focus {
+        border: 1px solid $yellow-color;
+        padding: 11px 33px;
+    
+}
+.about-btn:active{
+        border: 1px solid $footer-text-colore;
+        padding: 11px 33px;
+    
 }
