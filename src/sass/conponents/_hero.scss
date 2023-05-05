@@ -5,30 +5,29 @@
 .hero-container {
   position: relative;
 
-  @include mq(notTablet) {
+  @include mq(mobile-only) {
     height: 100vh;
     margin: 0;
     padding: 100px 20px 0px 20px;
   }
-  
 }
 
 h1 {
-font-family: 'Seymour One';
-font-weight: 400;
-font-size: 26px;
-line-height: 1.25;
-letter-spacing: 0.04em;
-text-transform: uppercase;
+  font-family: 'Seymour One';
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 1.25;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 
-padding: 30px 0px 30px 0px;
+  padding: 30px 0px 30px 0px;
 }
 
 h1 > span {
   font-size: 34px;
 }
 
-.hero-content__button{
+.hero-content__button {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -51,14 +50,14 @@ h1 > span {
   display: none;
 }
 
-.hero-img2{
+.hero-img2 {
   z-index: 1;
   position: relative;
   bottom: -40%;
   left: -20px;
 }
 
-.hero-img2 img{
+.hero-img2 img {
   max-width: none;
 }
 
