@@ -65,9 +65,11 @@
 }
 
 .slider-btn {
+  padding: 0px;
   display: block;
   width: 12px;
   height: 12px;
+  border: none;
   border-radius: 50px;
   background-color: $gray-btn-color;
 }
