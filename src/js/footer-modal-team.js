@@ -29,7 +29,7 @@ const createCardItem = (item) => {
 
     const nameEl = document.createElement('h3');
     nameEl.innerText = name;
-    nameEl.classList.add('team-list__name')
+    nameEl.classList.add('team-list__name');
     const description = document.createElement('p');
     description.innerText = position;
 

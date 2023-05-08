@@ -3,7 +3,7 @@ export const state = [
         name: "Hanna Lytvynenko",
         position: "Team Lead",
         img: "https://i.ibb.co/HqK94pM/IMG-6900-1-kkok.jpg",
-        linkedin: "https://i.ibb.co/HqK94pM/IMG-6900-1-kkok.jpg"
+        linkedin: "https://www.linkedin.com/in/hanna-lytvynenko/"
     },
     {
         name: "Oleksandr Kotliar",
