@@ -31,11 +31,11 @@ const createCardItem = (i) => {
 
     const btnBlock = document.createElement('div');
     btnBlock.classList.add('slider__btns')
-    const btnLeft = document.createElement('botton');
+    const btnLeft = document.createElement('button');
     btnLeft.setAttribute('class', 'slider-btn left');
-    const btnCenter = document.createElement('botton');
+    const btnCenter = document.createElement('button');
     btnCenter.setAttribute('class', 'slider-btn center');
-    const btnRight = document.createElement('botton');
+    const btnRight = document.createElement('button');
     btnRight.setAttribute('class', 'slider-btn right');
     btnBlock.append(btnLeft, btnCenter, btnRight);
 
@@ -64,17 +64,25 @@ const createCardItem = (i) => {
 }
 
 const onLeftBtn = () => {
-    (state.current > 0) && (state.current -= 1);
-    startRenderSlider(0);
+
+    console.log(state.current);
+    if (state.current > 0) {
+        state.current = 0;
+        startRenderSlider();
+    } else {
+        console.log('else')
+        startRenderSlider();
+    }
 }
 const onRightBtn = () => {
-
-    (state.current < state.dates.length - 1) && (state.current += 1);
-    startRenderSlider(0);
+    if (state.current < state.dates.length - 1) {
+        state.current += 1
+    }
+    startRenderSlider()
 }
 const onMiddleBtn = () => {
     state.current = Math.floor((state.dates.length - 1) / 2);
-    startRenderSlider(0);
+    startRenderSlider();
 }
 
 const render = () => {
@@ -82,26 +90,23 @@ const render = () => {
     ref.slider.append(createCardItem(state.current));
 }
 
-const startRenderSlider = (renderNum = 1) => {
-    clearTimeout(timerId);
-    let timeout = null;
-    stateValue = state.current
+const startRenderSlider = () => {
+    clearInterval(timerId);
+    render();
+    state.current += 1;
+    timerId = setInterval(() => {
+        if (state.current === state.dates.length) {
+            state.current = 0;
+            clearInterval(timerId);
+            startRenderSlider();
 
-    for (let i = 0; i <= state.dates.length - stateValue; i++) {
-        timeout = renderNum === 0 ? timeout + 1000 * i : timeout + 1000 * (i + 1);
-        timerId = setTimeout(() => {
+        } else {
+            render();
+            state.current += 1;
 
-            if (state.current === state.dates.length) {
-                state.current = 0;
-                clearTimeout(timerId);
-                startRenderSlider(1)
-            } else {
-                render();
-                state.current += 1;
-            }
-        }, timeout);
-    }
+        }
+    }, 5000)
 }
 
 
-startRenderSlider(0);
+startRenderSlider();
