@@ -64,15 +64,10 @@ const createCardItem = (i) => {
 }
 
 const onLeftBtn = () => {
-
-    console.log(state.current);
     if (state.current > 0) {
         state.current = 0;
+    } 
         startRenderSlider();
-    } else {
-        console.log('else')
-        startRenderSlider();
-    }
 }
 const onRightBtn = () => {
     if (state.current < state.dates.length - 1) {
@@ -81,6 +76,7 @@ const onRightBtn = () => {
     startRenderSlider()
 }
 const onMiddleBtn = () => {
+    clearTimeout(timerId);
     state.current = Math.floor((state.dates.length - 1) / 2);
     startRenderSlider();
 }
@@ -99,14 +95,11 @@ const startRenderSlider = () => {
             state.current = 0;
             clearInterval(timerId);
             startRenderSlider();
-
         } else {
             render();
             state.current += 1;
-
         }
     }, 5000)
 }
-
 
 startRenderSlider();
