@@ -1,0 +1,67 @@
+.header-container.is-open {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100vw;
+  height: 100vh;
+  padding: 10px 30px;
+  justify-content: flex-start;
+  @include mq(mobile) {
+    padding: 20px;
+  }
+  @include mq(tablet) {
+    padding: 20px 30px;
+  }
+}
+
+.nav-block__is-open {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav-list.nav__is-open {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  font-size: 32px;
+  @include mq(mobile) {
+    margin-top: 40px;
+  }
+  @include mq(tablet) {
+    margin-top: 75px;
+    font-size: 48px;
+  }
+}
+.nav-list__item .nav-list__item__is-open:hover,
+.nav-list__item .nav-list__item__is-open:focus {
+  color: $secondary-text-color;
+}
+.nav-list__item.nav-list__item__is-open:not(:last-child) {
+  margin-bottom: 30px;
+  @include mq(tablet) {
+    margin-bottom: 40px;
+  }
+}
+
+.btn__is-hiden {
+  display: none;
+}
+header .btn-close {
+  top: 15px;
+  right: 20px;
+  width: 32px;
+  height: 32px;
+  font-size: 26px;
+  @include mq(mobile) {
+    top: 20px;
+  }
+  @include mq(tablet) {
+    top: 30px;
+    right: 30px;
+  }
+}
+.burger .header-btn_is-hidden {
+  display: block;
+  @include mq(tablet-only) {
+    display: none;
+  }
+}

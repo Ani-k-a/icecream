@@ -3,7 +3,7 @@ import { state } from "./footer-modal-team-state";
 const ref = {
     botton: document.querySelector('.btn-copyright'),
     footer: document.querySelector('footer'),
-    body: document.querySelector('body')
+    body: document.querySelector('body'),
 };
 
 
