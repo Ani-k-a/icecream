@@ -6,9 +6,9 @@
   position: relative;
 
   @include mq(notTablet) {
-    height: 100vh;
+    height: 565px;
     margin: 0;
-    padding: 100px 20px 0px 20px;
+    padding: 70px 20px 0px 20px;
   }
   
 }
@@ -26,6 +26,12 @@ padding: 30px 0px 30px 0px;
 
 h1 > span {
   font-size: 34px;
+}
+
+.img_default {
+  display: flex;
+  margin: 0;
+  padding: 0;
 }
 
 .hero-content__button{
@@ -56,6 +62,8 @@ h1 > span {
   position: relative;
   bottom: -40%;
   left: -20px;
+  margin: 0;
+  padding: 0;
 }
 
 .hero-img2 img{
@@ -67,4 +75,9 @@ h1 > span {
   z-index: 2;
   bottom: 6%;
   left: 25%;
+}
+
+.hero-img3 source {
+  margin: 0;
+  padding: 0;
 }
