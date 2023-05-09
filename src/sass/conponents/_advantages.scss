@@ -7,10 +7,22 @@
 }
 .advantages-list {
   text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
   @include mq(tablet) {
-    display: flex;
+    flex-direction: row;
   }
+  &__item {
+    @include mq(mobile-only) {
+      width: 230px;
+    }
+  }
+
   &__item:not(:last-child) {
+    @include mq(mobile-only) {
+      margin-bottom: 30px;
+    }
     @include mq(tablet) {
       margin-right: 80px;
     }

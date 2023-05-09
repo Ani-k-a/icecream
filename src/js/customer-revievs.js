@@ -1,48 +1,4 @@
-const state = {
-    dates: [
-        {
-            img: "https://via.placeholder.com/85x85",
-            name: "Emily",
-            description: "I love visiting your cafe. You prepare the most delicious ice cream in Los Angeles! In addition, you have beautiful serving, cozy atmosphere and polite staff.",
-            address: "Emily, Los Angeles"
-        },
-        {
-            img: "https://via.placeholder.com/85x85",
-            name: "Bryan",
-            description: "Every day we come to you with friends after classes in college. We love your ice cream and casual atmosphere!",
-            address: "Bryan, New-York"
-        },
-        {
-            img: "https://via.placeholder.com/85x85",
-            name: "Diana",
-            description: "Ice cream is my passion! I love your chocolate hazelnut ice cream! And I really like the excellent service - always served politely and quickly!",
-            address: "Diana, Chicago"
-        },
-        {
-            img: "https://via.placeholder.com/85x85",
-            name: "Bob",
-            description: "I love visiting your cafe. You prepare the most delicious ice cream in Los Angeles! In addition, you have beautiful serving, cozy atmosphere and polite staff.",
-            address: "Bob, San Francisco"
-        },
-        {
-            img: "https://via.placeholder.com/85x85",
-            name: "Melissa",
-            description: "Every day we come to you with friends after classes in college. We love your ice cream and casual atmosphere!",
-            address: "Melissa, San Diego"
-        },
-        {
-            img: "https://via.placeholder.com/85x85",
-            name: "Alex",
-            description: "Ice cream is my passion! I love your chocolate hazelnut ice cream! And I really like the excellent service - always served politely and quickly!",
-            address: "Alex, Austin"
-        }
-
-    ],
-
-    curent: 0,
-
-};
-
+import { state } from './customer-revievs-state';
 
 const ref = {
     slider: document.querySelector(".slider")
@@ -51,10 +7,10 @@ const ref = {
 
 let timerId;
 
+const createCardItem = (i) => {
+    const objectInfo = state.dates[i]
+    const { img, name, description, address } = objectInfo;
 
-
-const createCardItem = (index) => {
-    const { img, name, description, address } = state.dates[index];
     const sliderBlock = document.createElement('div');
     sliderBlock.classList.add('slider__block');
 
@@ -75,22 +31,22 @@ const createCardItem = (index) => {
 
     const btnBlock = document.createElement('div');
     btnBlock.classList.add('slider__btns')
-    const btnLeft = document.createElement('botton');
+    const btnLeft = document.createElement('button');
     btnLeft.setAttribute('class', 'slider-btn left');
-    const btnCenter = document.createElement('botton');
+    const btnCenter = document.createElement('button');
     btnCenter.setAttribute('class', 'slider-btn center');
-    const btnRight = document.createElement('botton');
+    const btnRight = document.createElement('button');
     btnRight.setAttribute('class', 'slider-btn right');
     btnBlock.append(btnLeft, btnCenter, btnRight);
 
     sliderBlock.append(sliderDescrBlock, btnBlock);
 
-    if (state.curent === 0) {
+    if (state.current === 0) {
         btnLeft.classList.add('active-btn');
         btnRight.classList.remove('active-btn');
         btnCenter.classList.remove('active-btn');
 
-    } else if (state.curent === state.dates.length - 1) {
+    } else if (state.current === state.dates.length - 1) {
         btnRight.classList.add('active-btn');
         btnCenter.classList.remove('active-btn');
         btnLeft.classList.remove('active-btn');
@@ -108,43 +64,42 @@ const createCardItem = (index) => {
 }
 
 const onLeftBtn = () => {
-    clearTimeout(timerId);
-    return state.curent - 1;
+    if (state.current > 0) {
+        state.current = 0;
+    } 
+        startRenderSlider();
 }
 const onRightBtn = () => {
-    clearTimeout(timerId);
-    return state.curent + 1;
+    if (state.current < state.dates.length - 1) {
+        state.current += 1
+    }
+    startRenderSlider()
 }
 const onMiddleBtn = () => {
-
+    clearTimeout(timerId);
+    state.current = Math.floor((state.dates.length - 1) / 2);
+    startRenderSlider();
 }
 
 const render = () => {
     ref.slider.replaceChildren();
-    ref.slider.append(createCardItem(state.curent));
+    ref.slider.append(createCardItem(state.current));
 }
 
 const startRenderSlider = () => {
-    let timeout = null;
-
-    for (let i = state.curent; i <= state.dates.length; i++) {
-        timeout += 5000 * i;
-        timerId = setTimeout(() => {
-
-            if (i === (state.dates.length)) {
-
-                clearTimeout(timerId);
-                state.curent = 0;
-                startRenderSlider()
-            } else {
-                render();
-                state.curent += 1;
-            }
-
-
-        }, timeout);
-
-    }
+    clearInterval(timerId);
+    render();
+    state.current += 1;
+    timerId = setInterval(() => {
+        if (state.current === state.dates.length) {
+            state.current = 0;
+            clearInterval(timerId);
+            startRenderSlider();
+        } else {
+            render();
+            state.current += 1;
+        }
+    }, 5000)
 }
 
-startRenderSlider(state.curent);
+startRenderSlider();

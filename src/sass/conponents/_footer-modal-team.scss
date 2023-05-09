@@ -1,0 +1,73 @@
+.team-modal {
+  @include mq(mobile-only) {
+    overflow-y: scroll;
+    height: 90%;
+  }
+  @include mq(tablet) {
+    width: 600px;
+  }
+  @include mq(desktop) {
+    width: 1000px;
+  }
+}
+
+.team-list {
+  line-height: 1.2;
+  @include mq(tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  @include mq(desktop) {
+    flex-wrap: nowrap;
+  }
+
+  &__item {
+    width: 100%;
+
+    @include mq(tablet) {
+      width: 45%;
+    }
+    @include mq(desktop) {
+      width: 20%;
+    }
+  }
+
+  &__item:nth-child(-n + 2) {
+    @include mq(tablet) {
+      margin-bottom: 30px;
+    }
+    @include mq(desktop) {
+      margin-bottom: 0;
+    }
+  }
+  &__item:not(:last-child) {
+    @include mq(mobile-only) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__img {
+    object-fit: cover;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    height: 250px;
+    width: 100%;
+  }
+  &__info {
+    display: flex;
+    line-height: 1.2;
+  }
+  &__name {
+    margin-bottom: 5px;
+  }
+}
+
+.btn-linkedin {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin-right: 10px;
+  font-size: 30px;
+  color: $yellow-color;
+}
