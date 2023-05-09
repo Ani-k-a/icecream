@@ -31,9 +31,8 @@ button {
   background-color: transparent;
   border: 2px solid $yellow-color;
 }
-.btn-border:hover {
-  border: 2px solid $green-btn-color;
-}
+
+.btn-border:hover,
 .btn-border:focus {
   border: 2px solid $green-btn-color;
   color: $primary-text-color;
