@@ -8,7 +8,14 @@
     margin: 0;
     padding: 0;
   }
+
+  @include mq(tablet) {
+    margin: 0;
+    padding: 0;
+  }
+
   @include mq(desktop) {
+    margin: auto;
     padding: 0 16px;
   }
 }
@@ -58,6 +65,10 @@
 
   width: 250px;
 
+  @include mq(tablet) {
+    font-size: 48px;
+  }
+
   @include mq(desktop) {
     font-size: 58px;
     letter-spacing: 0.06em;
@@ -78,7 +89,7 @@
   }
 
   @include mq(desktop) {
-    padding: 60px 20px 40px 20px;
+    padding: 60px 20px;
   }
 }
 .social {
@@ -112,25 +123,19 @@
 .social__link {
   width: 34px;
   height: 34px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   border-radius: 50%;
   background-color: $yellow-color;
+  transition: 0.2s;
 }
 
 .social__link:hover,
 .social__link:focus {
   background-color: $footer-text-colore;
-  fill: $yellow-color;
-}
 
-// .social__link svg:hover,
-// .social__link svg:focus {
-//   fill: $yellow-color;
-// }
+}
 
 .social__icon {
   fill: $primary-bg-color;
@@ -165,7 +170,7 @@
   padding: 20px;
 
   @include mq(mobile) {
-    padding: 20px 70px;
+    padding: 12px 70px;
   }
 
   @include mq(desktop) {
