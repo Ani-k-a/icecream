@@ -121,16 +121,14 @@
   background-color: $yellow-color;
 }
 
-.social__link:hover,
-.social__link:focus {
+.social__item:hover .social__link,
+.social__item:focus .social__link {
   background-color: $footer-text-colore;
-  fill: $yellow-color;
 }
-
-// .social__link svg:hover,
-// .social__link svg:focus {
-//   fill: $yellow-color;
-// }
+.social__link:hover .social__icon,
+.social__link:focus .social__icon {
+  fill: $primary-text-color;
+}
 
 .social__icon {
   fill: $primary-bg-color;

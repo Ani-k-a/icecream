@@ -19,10 +19,15 @@
 }
 
 .nav-list.nav__is-open {
+  line-height: normal;
   display: flex;
   flex-direction: column;
   margin-top: 50px;
   font-size: 32px;
+  align-items: center;
+  @include mq(mobile-only) {
+    margin-bottom: 115px;
+  }
   @include mq(mobile) {
     margin-top: 40px;
   }
@@ -31,15 +36,20 @@
     font-size: 48px;
   }
 }
-.nav-list__item .nav-list__item__is-open:hover,
-.nav-list__item .nav-list__item__is-open:focus {
+.nav-list__item__is-open:hover,
+.nav-list__item__is-open:focus {
   color: $secondary-text-color;
 }
-.nav-list__item.nav-list__item__is-open:not(:last-child) {
+.nav-list__item__is-open:not(:last-child) {
   margin-bottom: 30px;
   @include mq(tablet) {
     margin-bottom: 40px;
   }
+}
+.burger__is-open {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .btn__is-hiden {
