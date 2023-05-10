@@ -5,6 +5,15 @@
     display: flex;
   }
 }
+.advantages-container {
+  padding: 30px 20px;
+  @include mq(tablet) {
+    padding: 30px 30px;
+  }
+  @include mq(tablet) {
+    padding: 30px 15px;
+  }
+}
 .advantages-list {
   text-align: center;
   align-items: center;
