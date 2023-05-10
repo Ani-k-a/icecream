@@ -71,7 +71,7 @@ const onLeftBtn = () => {
 
 }
 const onRightBtn = () => {
-    if (state.current < state.dates.length - 1) {
+    if (state.current < state.dates.length - 2) {
         state.current += 1;
         console.log((state.current));
         startRenderSlider()
