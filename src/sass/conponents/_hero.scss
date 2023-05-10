@@ -15,7 +15,7 @@
 
   @include mq(tablet){
     height: 415px;
-    padding-top: 65px;
+    padding: 65px 30px 12px;
   }
 
   @include mq(desktop) {
@@ -56,11 +56,31 @@ h1 > span {
   }
 }
 
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left__colum {
+  display: flex;
+  flex-direction: column;
+
+}
+
 .hero-content__button {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-bottom: 20px;
+  margin: 30px 0px 20px;
+
+  @include mq(tablet) {
+    margin: 0;
+  }
+
+  @include mq(desktop) {
+    z-index: 10;
+  }
 }
 
 .hero-content__button button {
@@ -133,16 +153,16 @@ h1 > span {
   padding: 0;
 }
 
-.establishments {
-  position: absolute;
-  top: 95px;
-  right: 32px;
+// .establishments {
+//   // position: absolute;
+//   // top: 95px;
+//   // right: 32px;
 
-  @include mq(desktop) {
-    top: 125;
-    right: 16px;
-  }
-}
+//   @include mq(desktop) {
+//     top: 125;
+//     right: 16px;
+//   }
+// }
 
 .establishments__item {
   display: flex;
