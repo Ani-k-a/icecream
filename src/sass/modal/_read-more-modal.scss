@@ -1,7 +1,7 @@
 .modal__video iframe {
   width: 100%;
   border-radius: 10px;
-  margin: 20px 0;
+  margin-bottom: 20px;
 
   @include mq(tablet){
     margin: 0 0 30px;
