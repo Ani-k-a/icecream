@@ -1,5 +1,5 @@
-// import { stateProd } from "./modal-buynow-state";
-import { renderForm } from "./form";
+// import { stateProd } from "./header-modal-buynow-state";
+// import { renderForm } from "./form";
 const  stateProd = [
     {
         title: "Ice Cream",
@@ -66,10 +66,26 @@ const createModal = () => {
     const modalItems = document.createElement('ul');
     modalItems.classList.add('modal-buynow__items');
     
+    const formBuyNow = document.createElement('form');
+    formBuyNow.classList.add("form-buynow");
+    const inputName = document.createElement('input');
+    const inputPhone = document.createElement('input');
+    const inputComment = document.createElement('textarea');
+    const buyNowBtn = document.createElement('button')
+    inputName.classList.add('input-buynow');
+    inputName.setAttribute('placeholder',"Name")
+    inputPhone.classList.add('input-buynow');
+    inputPhone.setAttribute('placeholder',"Phone");
+    inputComment.setAttribute("class",'input-buynow input-comment');
+    inputComment.setAttribute("rows", "3");
+    inputComment.setAttribute('placeholder',"Comment");
+    buyNowBtn.setAttribute("class",'btn-buynow btn-solid');
+    buyNowBtn.innerText = "Submit" ;
 
+    formBuyNow.append(inputName,inputPhone,inputComment,buyNowBtn);
     
     modalItems.append(...stateProd.map(createCardItem));
-    modalBlock.append(modalTitle,closeBtn,modalItems,renderForm());
+    modalBlock.append(modalTitle,closeBtn,modalItems,formBuyNow);
     modalBuyNow.append(modalBlock);
     backdrop.append(modalBuyNow);
     ref.header.append(backdrop);

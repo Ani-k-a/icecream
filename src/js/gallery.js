@@ -1,5 +1,6 @@
 import { state } from "./gallery-state";
 
+
 let timerId;
 
 const ref = {
