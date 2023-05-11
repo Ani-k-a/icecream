@@ -2,7 +2,10 @@
     @include mq(mobile-only){
        overflow: scroll;
        height: 90%; 
-    }   
+    }
+    @include mq(tablet) {
+        width: 600px;
+      }
 }
 .modal-block{
     text-align: center;
@@ -10,11 +13,17 @@
 .modal-buynow__title{
     font-family: $title-font;
     margin-bottom: 75px;
+    @include mq(tablet) {
+        margin-bottom: 100px;
+      }
 }
 .modal-buynow__items{
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include mq(tablet) {
+        flex-direction: row;
+      }
     
 }
 .modal-buynow__item{
@@ -23,17 +32,32 @@
     text-transform: uppercase;
     font-weight: bold;
     font-size: 16px;
+    margin-bottom: 84px;
+    @include mq(tablet) {
+        // margin-bottom: 0;
+        // margin-right: 32px;
+      }
 
 }
+.modal-buynow__item:not(:last-child){
+    @include mq(tablet){
+        margin-right: 32px;
+    }
+    
+}
+
 .modal-buynow__item--container{
     position: relative;
     text-align:center;
     padding-top: 96px;
     width: 132px;
     height: 136px;
-    margin-bottom: 84px;
     border-radius: 15px;
+    @include mq(tablet) {
+        
+      }
 }
+
 
 .modal-buynow__item--background{
     width: 132px;
@@ -43,17 +67,28 @@
     z-index: 90;
     border-radius: 50%;
     box-shadow: 0px 5.41333px 20.3px rgba(0, 0, 0, 0.25);
+    @include mq(tablet) {
+        
+      }
 }
 .modal-buynow__item--img{
     position: absolute;
     top:-61px;
     z-index: 100;
     border-radius: 50%;
+    @include mq(tablet) {
+        
+      }
 }
 
 
 .form-buynow{
     margin-top:-52px ;
+    @include mq(tablet) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
 }
 
 .input-buynow{
@@ -63,10 +98,17 @@
  border: 1px solid $primary-bg-color;
  background: rgba(248, 210, 78, 0.1);
  padding: 8px 12px;
+
+ @include mq(tablet) {
+    width: 368px;
+ }
 }
 .input-comment{
     resize: none;
     padding: 8px 12px;
+    @include mq(tablet) {
+        padding: 11px 16px;
+      }
 }
 
 .btn-buynow{
