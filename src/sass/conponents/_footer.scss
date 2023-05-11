@@ -131,10 +131,9 @@
   transition: 0.2s;
 }
 
-.social__link:hover,
-.social__link:focus {
+.social__item:hover .social__link,
+.social__item:focus .social__link {
   background-color: $footer-text-colore;
-
 }
 
 .social__icon {
