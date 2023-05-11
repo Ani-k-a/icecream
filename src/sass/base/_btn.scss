@@ -9,6 +9,11 @@ button {
   }
 }
 
+button:hover,
+button:focus {
+  transition: 0.2s;
+}
+
 .btn-solid {
   background-color: $yellow-color;
   border: none;
