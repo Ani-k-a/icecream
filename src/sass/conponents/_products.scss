@@ -61,7 +61,9 @@
     align-items: center;
     margin-bottom: 170px;
     width: 100%;
-    transition-property: transform;
+    transition-property: transform, box-shadow;
+    transition-duration: 2000ms;
+    border-radius: 25px;
 
     @include mq(mobile-only) {
       max-width: 320px;
@@ -78,6 +80,8 @@
   }
   &__item:hover {
     transform: scale(1.1);
+    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      0px 1px 1px rgba(0, 0, 0, 0.12);
   }
 
   &__picture {
