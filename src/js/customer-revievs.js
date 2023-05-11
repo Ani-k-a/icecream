@@ -102,7 +102,7 @@ const startRenderSlider = () => {
             render();
             state.current += 1;
         }
-    }, 5000)
+    }, 8000)
 }
 
 startRenderSlider();

@@ -8,7 +8,6 @@ const ref = {
     byBtn: document.querySelector('.header-btn'),
     body: document.querySelector('body')
 };
-console.log(ref.item)
 
 const createBtn = () => {
     const btn = document.createElement('button');
