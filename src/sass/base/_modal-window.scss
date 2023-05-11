@@ -26,14 +26,19 @@
 
 .modal-block {
   position: relative;
-  padding: 30px;
+  padding: 28px;
   @include mq(tablet) {
-    padding: 30px 40px;
+    padding: 30px 60px;
   }
 }
 
 .modal__title {
   font-size: 16px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  text-transform: none;
   margin-bottom: 20px;
   @include mq(tablet) {
     font-size: 20px;

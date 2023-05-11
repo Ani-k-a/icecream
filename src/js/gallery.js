@@ -1,5 +1,6 @@
 import { state } from "./gallery-state";
 
+
 let timerId;
 
 const ref = {
@@ -8,7 +9,7 @@ const ref = {
 
 const createSlider = (i) => {
   const objectImg = state.dates[i];
-  const { img ,description} = objectImg;
+  const { img, description } = objectImg;
   const sliderImg = document.createElement('img');
   sliderImg.setAttribute('src', img);
   sliderImg.setAttribute('alt', description);
@@ -22,23 +23,23 @@ const render = () => {
 };
 
 const startRenderSlider = () => {
-    clearInterval(timerId);
-    render();
-    state.current += 1;
-    timerId = setInterval(() => {
-        if (state.current === state.dates.length) {
-            state.current = 0;
-            clearInterval(timerId);
-            startRenderSlider();
-        } else {
-            render();
-            state.current += 1;
-        }
-    }, 3000);
+  clearInterval(timerId);
+  render();
+  state.current += 1;
+  timerId = setInterval(() => {
+    if (state.current === state.dates.length) {
+      state.current = 0;
+      clearInterval(timerId);
+      startRenderSlider();
+    } else {
+      render();
+      state.current += 1;
+    }
+  }, 20000);
 }
 startRenderSlider();
 
-  
+
 
 
 
