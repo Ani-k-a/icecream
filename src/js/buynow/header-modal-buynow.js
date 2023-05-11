@@ -1,25 +1,6 @@
 // import { stateProd } from "./header-modal-buynow-state";
-// import { renderForm } from "./form";
-const  stateProd = [
-    {
-        title: "Ice Cream",
-        img: "https://i.ibb.co/DfZrxk5/kelsey-curtis-G5-Zenft-PPOA-unsplash-2.jpg",
-        color: "#AEC6A5"
-        
-    },
-    {
-        title: "Ice Coffee",
-        img: "https://i.ibb.co/s95HTLS/pariwat-pannium-0-qbe-F-0zn8-unsplash-1.jpg" ,
-        color: "#EFD478"
-        
-    },
-    {
-        title: "Milkshake",
-        img: "https://i.ibb.co/Zz6yLTn/victor-rutka-4-Fujjkc-I40g-unsplash-1.jpg",
-        color:"#D6936D"
-    }
-    
-]
+// import { renderForm } from "../form";
+
 const ref = {
     button: document.querySelector('.header-btn'),
     header: document.querySelector('header'),
@@ -42,7 +23,7 @@ const createCardItem = (item) =>{
     containerItem.innerText = title;
     containerItem.style.border = `${2}px solid ${color}`;
 
-    cardItem.append(imgEl,backCircle,containerItem)
+    cardItem.append(imgEl,backCircle,containerItem);
 
     return cardItem;
 }
@@ -66,26 +47,10 @@ const createModal = () => {
     const modalItems = document.createElement('ul');
     modalItems.classList.add('modal-buynow__items');
     
-    const formBuyNow = document.createElement('form');
-    formBuyNow.classList.add("form-buynow");
-    const inputName = document.createElement('input');
-    const inputPhone = document.createElement('input');
-    const inputComment = document.createElement('textarea');
-    const buyNowBtn = document.createElement('button')
-    inputName.classList.add('input-buynow');
-    inputName.setAttribute('placeholder',"Name")
-    inputPhone.classList.add('input-buynow');
-    inputPhone.setAttribute('placeholder',"Phone");
-    inputComment.setAttribute("class",'input-buynow input-comment');
-    inputComment.setAttribute("rows", "3");
-    inputComment.setAttribute('placeholder',"Comment");
-    buyNowBtn.setAttribute("class",'btn-buynow btn-solid');
-    buyNowBtn.innerText = "Submit" ;
-
-    formBuyNow.append(inputName,inputPhone,inputComment,buyNowBtn);
+    const form = renderForm();
     
     modalItems.append(...stateProd.map(createCardItem));
-    modalBlock.append(modalTitle,closeBtn,modalItems,formBuyNow);
+    modalBlock.append(modalTitle,closeBtn,modalItems,form);
     modalBuyNow.append(modalBlock);
     backdrop.append(modalBuyNow);
     ref.header.append(backdrop);
