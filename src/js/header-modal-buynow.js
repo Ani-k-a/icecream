@@ -1,5 +1,6 @@
-// import { state } from "./header-modal-buynow-state";
-const state = [
+// import { stateProd } from "./modal-buynow-state";
+import { renderForm } from "./form";
+const  stateProd = [
     {
         title: "Ice Cream",
         img: "https://i.ibb.co/DfZrxk5/kelsey-curtis-G5-Zenft-PPOA-unsplash-2.jpg",
@@ -19,7 +20,6 @@ const state = [
     }
     
 ]
-
 const ref = {
     button: document.querySelector('.header-btn'),
     header: document.querySelector('header'),
@@ -65,24 +65,11 @@ const createModal = () => {
     closeBtn.setAttribute('class','btn-close fa-solid fa-xmark')
     const modalItems = document.createElement('ul');
     modalItems.classList.add('modal-buynow__items');
-    const formBuyNow = document.createElement('form');
-    formBuyNow.classList.add("form-buynow");
-    const inputName = document.createElement('input');
-    const inputPhone = document.createElement('input');
-    const inputComment = document.createElement('input');
-    const buyNowBtn = document.createElement('button')
-    inputName.classList.add('input-buynow');
-    inputName.setAttribute('placeholder',"Name")
-    inputPhone.classList.add('input-buynow');
-    inputPhone.setAttribute('placeholder',"Phone")
-    inputComment.setAttribute("class",'input-buynow input-comment');
-    inputComment.setAttribute('placeholder',"Comment")
-    buyNowBtn.setAttribute("class",'btn-buynow btn-solid')
-    buyNowBtn.innerText = "Submit"
+    
 
-    formBuyNow.append(inputName,inputPhone,inputComment)
-    modalItems.append(...state.map(createCardItem));
-    modalBlock.append(modalTitle,closeBtn,modalItems,formBuyNow,buyNowBtn)
+    
+    modalItems.append(...stateProd.map(createCardItem));
+    modalBlock.append(modalTitle,closeBtn,modalItems,renderForm());
     modalBuyNow.append(modalBlock);
     backdrop.append(modalBuyNow);
     ref.header.append(backdrop);
@@ -95,8 +82,7 @@ const createModal = () => {
     }
     closeBtn.addEventListener("click",onCloseBtnClick)
 }
-const onOpenBtnClick = () =>{
-   console.log("privet"); 
+const onOpenBtnClick = () =>{ 
    createModal();
 }
 
