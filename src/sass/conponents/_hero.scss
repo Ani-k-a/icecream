@@ -39,7 +39,7 @@ h1 {
 
   @include mq(tablet) {
     width: 247px;
-    padding: 15px 0px;
+    // padding: 15px 0px;
   }
 
   @include mq(desktop) {
@@ -60,6 +60,14 @@ h1 > span {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @include mq (mobile-only){
+    margin-top: 50px;
+  }
+
+  @include mq(tablet) {
+    margin: 0;
+  }
 }
 
 .left__colum {
@@ -75,7 +83,7 @@ h1 > span {
   margin: 30px 0px 20px;
 
   @include mq(tablet) {
-    margin: 0;
+    margin: 15px 0 0;
   }
 
   @include mq(desktop) {
@@ -85,10 +93,33 @@ h1 > span {
 
 .hero-content__button button {
     font-size: 12px;
+
+    @include mq(desktop) {
+      font-size: 14px;
+      padding: 10px 15px;
+    }
 }
 
 .hero-content__button li:not(:last-child) {
   margin-right: 12px;
+}
+
+.hero__link {
+  color: $secondary-text-color;
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.25;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 10px 25px;
+  border-radius: 8px;
+
+    @include mq(desktop){
+    font-size: 14px;
+    padding: 10px 35px;
+  }
 }
 
 .establishments,
@@ -152,17 +183,6 @@ h1 > span {
   margin: 0;
   padding: 0;
 }
-
-// .establishments {
-//   // position: absolute;
-//   // top: 95px;
-//   // right: 32px;
-
-//   @include mq(desktop) {
-//     top: 125;
-//     right: 16px;
-//   }
-// }
 
 .establishments__item {
   display: flex;
