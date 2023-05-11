@@ -13,16 +13,15 @@
     padding: 70px 20px 0px 20px;
   }
 
-  @include mq(tablet){
+  @include mq(tablet) {
     height: 415px;
     padding-top: 65px;
   }
 
   @include mq(desktop) {
-   height: 665px;
-   padding-top: 120px;
+    height: 665px;
+    padding-top: 120px;
   }
-
 }
 
 h1 {
@@ -33,7 +32,7 @@ h1 {
   letter-spacing: 0.04em;
   text-transform: uppercase;
 
-  @include mq(mobile-only){
+  @include mq(mobile-only) {
     width: 247px;
   }
 
@@ -64,7 +63,7 @@ h1 > span {
 }
 
 .hero-content__button button {
-    font-size: 12px;
+  font-size: 12px;
 }
 
 .hero-content__button li:not(:last-child) {
@@ -164,7 +163,6 @@ h1 > span {
 
   @include mq(desktop) {
     font-size: 46px;
-
   }
 }
 
@@ -179,9 +177,21 @@ h1 > span {
   }
 }
 
-.hero-img1 {
+.hero-img1 img {
+  animation-name: spin;
+  animation-duration: 100s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
 
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .hero-img2 {
   z-index: 1;
   position: absolute;
@@ -207,4 +217,3 @@ h1 > span {
     right: 90px;
   }
 }
-
