@@ -1,6 +1,12 @@
-.modal__title {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  text-align: justify;
+.modal-title__franchise {
+  font-size: 15px;
+
+  @include mq(tablet) {
+    width: 300px;
+    font-size: 16px;
+    margin: auto;
+    margin-bottom: 25px;
+
+  }
 }
+
