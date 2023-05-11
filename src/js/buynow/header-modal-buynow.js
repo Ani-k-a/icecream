@@ -1,5 +1,5 @@
 import { stateProd } from "./header-modal-buynow-state";
- // import { renderForm } from "../form";
+import { renderForm } from "../renderForm";
 
 const ref = {
     button: document.querySelector('.header-btn'),
@@ -7,8 +7,8 @@ const ref = {
     body: document.querySelector('body'),
 };
 
-const createCardItem = (item) =>{
-    const { title, img, color} = item;
+const createCardItem = (item) => {
+    const { title, img, color } = item;
 
     const cardItem = document.createElement('li');
     cardItem.classList.add('modal-buynow__item');
@@ -23,7 +23,7 @@ const createCardItem = (item) =>{
     containerItem.innerText = title;
     containerItem.style.border = `${2}px solid ${color}`;
 
-    cardItem.append(imgEl,backCircle,containerItem)
+    cardItem.append(imgEl, backCircle, containerItem)
 
     return cardItem;
 }
@@ -33,7 +33,7 @@ const createModal = () => {
     backdrop.classList.add('backdrop');
 
     const modalBuyNow = document.createElement('div');
-    modalBuyNow.classList.add('buynow-modal') ;
+    modalBuyNow.classList.add('buynow-modal');
     modalBuyNow.classList.add('modal')
 
     const modalBlock = document.createElement('div')
@@ -43,28 +43,28 @@ const createModal = () => {
     modalTitle.classList.add('modal-buynow__title');
     modalTitle.innerText = "Buy Now"
     const closeBtn = document.createElement('button');
-    closeBtn.setAttribute('class','btn-close fa-solid fa-xmark')
+    closeBtn.setAttribute('class', 'btn-close fa-solid fa-xmark')
     const modalItems = document.createElement('ul');
     modalItems.classList.add('modal-buynow__items');
-    
+
     const form = renderForm();
-    
+
     modalItems.append(...stateProd.map(createCardItem));
-    modalBlock.append(modalTitle,closeBtn,modalItems,form);
+    modalBlock.append(modalTitle, closeBtn, modalItems, form);
     modalBuyNow.append(modalBlock);
     backdrop.append(modalBuyNow);
     ref.header.append(backdrop);
-    
-    
+
+
     const onCloseBtnClick = () => removeModalWindow();
 
-    const removeModalWindow = ()=>{
+    const removeModalWindow = () => {
         backdrop.remove();
     }
-    closeBtn.addEventListener("click",onCloseBtnClick)
+    closeBtn.addEventListener("click", onCloseBtnClick)
 }
-const onOpenBtnClick = () =>{ 
-   createModal();
+const onOpenBtnClick = () => {
+    createModal();
 }
 
-ref.button.addEventListener('click',onOpenBtnClick)
+ref.button.addEventListener('click', onOpenBtnClick)
