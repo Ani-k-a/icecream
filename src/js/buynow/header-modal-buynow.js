@@ -21,7 +21,6 @@ const createCardItem = (item) => {
     const containerItem = document.createElement('div');
     containerItem.classList.add('modal-buynow__item--container')
     containerItem.innerText = title;
-    containerItem.style.border = `${2}px solid ${color}`;
 
     cardItem.append(imgEl, backCircle, containerItem)
 
