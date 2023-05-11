@@ -1,0 +1,22 @@
+.modal-title__franchise {
+  font-size: 15px;
+
+  @include mq(tablet) {
+    width: 300px;
+    font-size: 16px;
+    margin: auto;
+    margin-bottom: 25px;
+
+  }
+}
+
+.modal-block p {
+  margin-bottom: 82px;
+}
+
+// .franchise-form {
+//   @include mq(tablet){
+//     margin: 0;
+//   }
+// }
+
