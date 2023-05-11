@@ -16,7 +16,6 @@
   line-height: 1.4;
 
   @include mq(tablet) {
-    text-align: justify;
     font-size: 16px;
   }
 }
