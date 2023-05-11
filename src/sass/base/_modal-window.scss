@@ -26,9 +26,9 @@
 
 .modal-block {
   position: relative;
-  padding: 30px;
+  padding: 28px;
   @include mq(tablet) {
-    padding: 30px 40px;
+    padding: 30px 60px;
   }
 }
 
