@@ -21,6 +21,7 @@ const renderModalWindow = () => {
   video.innerHTML = `<iframe width="460" height="215" src="https://www.youtube.com/embed/ypbPnyJeQ3A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
   video.setAttribute("class", "modal__video")
   const text = document.createElement("p");
+  text.setAttribute("class", "read-more__text")
   text.innerText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et"
 
   const onCloseBtnClick = () => {
