@@ -55,9 +55,10 @@
 }
 
 .about-picture {
-
+ position: relative;
+ padding-bottom: 40px;
     &__row {
-        position: relative;
+        position: absolute;
         border-radius: 50%;
         top: 20px;
 
@@ -75,7 +76,6 @@
         width: 279px;
         height: 279px;
         border-radius: 50%;
-        position: absolute;
 
         @include mq(tablet) {
             width: 330px;

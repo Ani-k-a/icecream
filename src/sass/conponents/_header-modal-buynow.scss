@@ -21,7 +21,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 30px;
     @include mq(tablet) {
+        margin-bottom: 40px;
         flex-direction: row;
       }
     
@@ -32,15 +34,15 @@
     text-transform: uppercase;
     font-weight: bold;
     font-size: 16px;
-    margin-bottom: 84px;
     @include mq(tablet) {
-        // margin-bottom: 0;
-        // margin-right: 32px;
+        
       }
 
 }
 .modal-buynow__item:not(:last-child){
+    margin-bottom: 84px ;
     @include mq(tablet){
+        margin-bottom: 0;
         margin-right: 32px;
     }
     
@@ -83,7 +85,7 @@
 
 
 .form-buynow{
-    margin-top:-52px ;
+    
     @include mq(tablet) {
         display: flex;
         flex-direction: column;
