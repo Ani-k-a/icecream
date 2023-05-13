@@ -59,7 +59,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 170px;
+
     width: 100%;
     transition-property: transform, box-shadow;
     transition-duration: 2000ms;
@@ -78,6 +78,13 @@
       width: calc((100% - 2 * 30px) / 3);
     }
   }
+  &__item:not(:last-child) {
+    margin-bottom: 170px;
+    @include mq(tablet) {
+      margin-bottom: 0px;
+    }
+  }
+
   &__item:hover {
     transform: scale(1.1);
     box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
