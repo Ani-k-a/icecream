@@ -81,18 +81,3 @@ header {
     fill: inherit;
   }
 }
-
-.header-btn:hover,
-.header-btn:focus {
-  @include mq(tablet) {
-    border: 1px solid $yellow-color;
-    padding: 11px 35px;
-  }
-}
-
-// .header-btn:active{
-//     @include mq(tablet) {
-//         border: 1px solid $footer-text-colore;
-//         padding: 11px 35px;
-//     }
-// }
