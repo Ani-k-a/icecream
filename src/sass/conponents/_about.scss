@@ -49,6 +49,7 @@
 
   @include mq(tablet) {
     flex-direction: row;
+    justify-content: space-between;
   }
 }
 
@@ -95,13 +96,11 @@
   @include mq(tablet) {
     width: 335px;
     text-align: left;
-    margin-left: 38px;
     margin-top: 0;
   }
 
   @include mq(desktop) {
     width: 463px;
-    margin-left: 110px;
   }
 }
 
