@@ -16,7 +16,7 @@ button:focus {
 
 .btn-solid {
   background-color: $yellow-color;
-  border: none;
+  border: 1px solid $yellow-color;
 }
 .btn-solid:hover {
   background-color: $primary-bg-color;

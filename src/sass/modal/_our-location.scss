@@ -1,0 +1,23 @@
+.modal__map iframe{
+  width: 224px;
+  height: 200px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+
+  @include mq(tablet) {
+    width: 448px;
+    height: 260px;
+    margin-bottom: 30px;
+  }
+}
+
+.btn-map {
+  padding: 10px 25px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  color: $secondary-text-color;
+  @include mq(desktop) {
+    padding: 10px 35px;
+  }
+}
