@@ -1,7 +1,7 @@
-export const renderItemNutrItem = ({ title, value }) => {
+export const renderItemNutrItem = ({title, value}) => {
   const liNutrVal = document.createElement('li');
   liNutrVal.classList.add('ulNutrVal__item');
-
+  
   const divTitleNutrVal = document.createElement('div');
   divTitleNutrVal.classList.add('ulNutrVal__title');
   divTitleNutrVal.innerText = title;
@@ -9,8 +9,10 @@ export const renderItemNutrItem = ({ title, value }) => {
   const divValueNutrVal = document.createElement('div');
   divValueNutrVal.classList.add('ulNutrVal__description');
   divValueNutrVal.innerText = value;
+  
+//   console.dir(divValueNutrVal);
 
-  liNutrVal.append(divTitleNutrVal, divValueNutrVal);
+  liNutrVal.append(divValueNutrVal, divTitleNutrVal);
 
   return liNutrVal;
 };
