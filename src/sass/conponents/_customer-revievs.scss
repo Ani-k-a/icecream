@@ -1,14 +1,14 @@
 .revievs_container {
   padding-top: 80px;
-  padding-bottom: 60px;
+  padding-bottom: 30px;
   justify-content: center;
   display: flex;
   text-align: center;
   @include mq(tablet) {
-    padding: 100px 30px 80px 30px;
+    padding: 100px 30px 40px 30px;
   }
   @include mq(desktop) {
-    padding: 140px 115px 100px 115px;
+    padding: 140px 115px 50px 115px;
   }
 }
 
