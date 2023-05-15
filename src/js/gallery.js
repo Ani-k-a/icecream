@@ -35,7 +35,7 @@ const startRenderSlider = () => {
       render();
       state.current += 1;
     }
-  }, 20000);
+  }, 8000);
 }
 startRenderSlider();
 

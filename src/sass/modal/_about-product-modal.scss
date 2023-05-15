@@ -1,13 +1,19 @@
-.modal {
-  overflow-y: scroll;
-  height: 90%;
+.about-modal {
+ 
+    overflow: scroll;
+    height: 90%;
+  
 }
 
-.modal-block, .ulNutrVal__item {
+.modal-block,
+.ulNutrVal__item {
   flex-direction: column;
 }
 
-.modal-block, .ulNutrVal__item, .ulNutrVal, .ulNutrVal__description {
+.modal-block,
+.ulNutrVal__item,
+.ulNutrVal,
+.ulNutrVal__description {
   display: flex;
   align-items: center;
 }
@@ -28,20 +34,10 @@
   height: 138px;
   width: 132px;
   margin-bottom: 24px;
-
-  @include mq(tablet) {
-    height: 208px;
-    width: 200px;
-  }
 }
 
 .modal_picture {
   border-radius: 50%;
-
-  @include mq(tablet) {
-    height: 200px;
-    width: 200px;
-  }
 }
 
 .modalLayer {
@@ -51,30 +47,25 @@
   width: 132px;
   z-index: -1;
   border-radius: 50%;
-
-  @include mq(tablet) {
-    height: 200px;
-    width: 200px;
-    top: 10px;
-  }
 }
 
 .ulNutrVal {
   flex-direction: row;
   margin-bottom: 40px;
 
-  @include mq(tablet) {
-    margin-bottom: 50px;
-  }
+    @include mq(tablet) {
+      margin-bottom: 50px;
+    }
 
   &__item {
     justify-content: center;
-    border-radius: 30px;
+    border-radius: 40px;
+    width: 48px;
+    
 
     @include mq(tablet) {
       width: 65px;
       height: 90px;
-      border-radius: 40px;
     }
   }
 
@@ -90,8 +81,8 @@
   &__description {
     margin-bottom: 14px;
     font-size: 12px;
-    line-height: 1.25;
     font-weight: 500;
+    
   }
 
   &__title {
@@ -101,12 +92,19 @@
   }
 
   &__description {
-    width: 53px;
-    height: 53px;
+    width: 43px;
+    height: 43px;
     border-radius: 50%;
     line-height: 1.4;
     justify-content: center;
     margin-bottom: 7px;
+
+    @include mq(tablet) {
+      width: 53px;
+    height: 53px;
+    }
+
+    
   }
 }
 .modal_description,
@@ -115,12 +113,13 @@
   font-family: $primary-font;
 }
 
-.modal_description, .ulNutrVal__description {
-    font-weight: 600;
+.modal_description,
+.ulNutrVal__description {
+  font-weight: 600;
 }
 
 .modal_description {
-  margin-bottom: 14px;  
+  margin-bottom: 14px;
   font-size: 20px;
   line-height: 1.4;
 }
@@ -130,7 +129,7 @@
   margin-bottom: 48px;
 
   @include mq(tablet) {
-    width: 488px;
+    width: 440px;
   }
 
   &__item {
