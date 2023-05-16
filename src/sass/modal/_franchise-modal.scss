@@ -10,3 +10,17 @@
   }
 }
 
+.franchise__text {
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 25px;
+
+  @include mq(tablet) {
+    font-size: 16px;
+    margin-bottom: 30px;
+   }
+
+
+}
+

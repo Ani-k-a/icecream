@@ -49,6 +49,10 @@
 
   @include mq(tablet) {
     flex-direction: row;
+    justify-content: space-between;
+  }
+  @include mq(desktop) {
+    justify-content: flex-start;
   }
 }
 
@@ -95,7 +99,6 @@
   @include mq(tablet) {
     width: 335px;
     text-align: left;
-    margin-left: 38px;
     margin-top: 0;
   }
 
@@ -136,13 +139,4 @@
   &__icon {
     margin-left: 8px;
   }
-}
-.about-btn:hover,
-.about-btn:focus {
-  border: 1px solid $yellow-color;
-  padding: 11px 33px;
-}
-.about-btn:active {
-  border: 1px solid $footer-text-colore;
-  padding: 11px 33px;
 }

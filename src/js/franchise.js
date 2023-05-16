@@ -17,6 +17,7 @@ const renderModalWindow = () => {
   title.setAttribute("class", "modal__title title modal-title__franchise");
   title.innerText = "Thank you for your interest in owning an Ice Cream shop"
   const text = document.createElement("p");
+  text.setAttribute("class","franchise__text")
   text.innerText = "Due to the overwhelming volume of franchise requests we are not accepting new franchisee applications at this time. Once the application process resumes, we will contact you for further information. Please fill out the contact information below and we will reach out for additional information. We appreciate your patience."
 
   /* render form */

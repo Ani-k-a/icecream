@@ -21,6 +21,7 @@ const createCardItem = (item) => {
     const containerItem = document.createElement('div');
     containerItem.classList.add('modal-buynow__item--container')
     containerItem.innerText = title;
+    containerItem.style.border = `${2}px solid${color}`
 
     cardItem.append(imgEl, backCircle, containerItem)
 
@@ -54,14 +55,29 @@ const createModal = () => {
     backdrop.append(modalBuyNow);
     ref.header.append(backdrop);
 
-
+    ref.body.classList.add('disabled-scroll');
     const onCloseBtnClick = () => removeModalWindow();
 
     const removeModalWindow = () => {
         backdrop.remove();
+        ref.body.classList.remove('disabled-scroll');
     }
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            removeModalWindow();
+        }
+    });
+
+    backdrop.addEventListener('click', (event) => {
+        if (event.target === backdrop)
+            removeModalWindow();
+    });
+
     closeBtn.addEventListener("click", onCloseBtnClick)
 }
+
+
 const onOpenBtnClick = () => {
     createModal();
 }
