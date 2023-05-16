@@ -27,13 +27,13 @@ const createBtn = () => {
     btn.addEventListener('click', onCloseBtnClick);
 
     const onLinkClick = (ev) => {
-        console.log(ev.target.tagName)
-        if (ev.target.tagName === 'A') { onCloseBtnClick() }
+        console.log('link')
+        if (ev.target.tagName === 'A' || ev.target.tagName === 'BUTTON' || ev.target.tagName === 'IMG') { onCloseBtnClick() }
     };
 
-    ref.navigation.addEventListener('click', (ev) => {
+    ref.header.addEventListener('click', (ev) => {
         onLinkClick(ev);
-        ref.navigation.removeEventListener('click', onLinkClick, true);
+        ref.header.removeEventListener('click', onLinkClick, true);
     })
 
     ref.header.append(btn);
