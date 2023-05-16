@@ -2,6 +2,7 @@ import { state } from './about-product-modal-state';
 import { renderItemNutrItem } from './render-item-nutritional-item';
 import { renderIgngidientItem } from './render-igngidient-item';
 import { renderForm } from '../renderForm';
+import { orders } from '../orders';
 
 const refs = {
   greenBtn: document.getElementById('button_green'),
@@ -11,7 +12,6 @@ const refs = {
 };
 
 const renderNutritionalValue = (arr, color) => {
-
   const ulNutrVal = document.createElement('ul');
   ulNutrVal.classList.add('ulNutrVal');
   ulNutrVal.classList.add(color);
@@ -23,18 +23,41 @@ const renderIngredientsList = arr => {
   const ulIngrList = document.createElement('ul');
   ulIngrList.classList.add('ulIngrList');
   ulIngrList.append(...arr.map(el => renderIgngidientItem(el)));
-  
+
   return ulIngrList;
 };
 
+const renderMessage = () => {
+  const finish = document.createElement('div');
+  const textTitle = document.createElement('p');
+  const textFinish = document.createElement('p');
 
+  finish.setAttribute('class', 'finish-order');
+  textTitle.setAttribute('class', 'text-finish');
+  textFinish.setAttribute('class', 'text-finish');
 
-const renderModal = ({ name, src, arr, arr2, backgroundColor, color, box_shadow }) => {
+  textTitle.innerText = 'Спасибо!';
+  textFinish.innerText = 'Ваш, заказ принят!';
+
+  finish.append(textTitle, textFinish);
+  return finish;
+};
+
+const renderModal = ({
+  name,
+  src,
+  arr,
+  arr2,
+  backgroundColor,
+  color,
+  box_shadow,
+}) => {
   const backdrop = document.createElement('div');
   backdrop.classList.add('backdrop');
 
   const modal = document.createElement('div');
   modal.classList.add('modal');
+  modal.classList.add('about-modal');
 
   const block = document.createElement('div');
   block.classList.add('modal-block');
@@ -68,13 +91,32 @@ const renderModal = ({ name, src, arr, arr2, backgroundColor, color, box_shadow 
 
   divIngredient.append(h3, renderIngredientsList(arr2));
 
+  const form = renderForm();
+
+  const onFormSubmit = event => {
+    event.preventDefault();
+
+    const order = {
+      name: form.name.value,
+      phone: form.phone.value,
+      comment: form.comment.value,
+      productName: name,
+    };
+
+    orders.push(order);
+    console.log(orders);
+    modal.replaceChildren();
+    modal.append(closeBtn, renderMessage());
+    modal.style.height = '200px';
+  };
+
   block.append(
     h2,
     closeBtn,
     picContainer,
     renderNutritionalValue(arr, color),
     divIngredient,
-    renderForm()
+    form
   );
   modal.append(block);
   backdrop.append(modal);
@@ -98,6 +140,8 @@ const renderModal = ({ name, src, arr, arr2, backgroundColor, color, box_shadow 
   });
 
   closeBtn.addEventListener('click', onCloseBtnClick);
+
+  form.addEventListener('submit', onFormSubmit);
 
   return backdrop;
 };
