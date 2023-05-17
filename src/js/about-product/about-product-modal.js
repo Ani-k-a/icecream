@@ -3,6 +3,7 @@ import { renderItemNutrItem } from './render-item-nutritional-item';
 import { renderIgngidientItem } from './render-igngidient-item';
 import { renderForm } from '../renderForm';
 import { orders } from '../orders';
+import { renderMessage } from '../notification';
 
 const refs = {
   greenBtn: document.getElementById('button_green'),
@@ -25,22 +26,6 @@ const renderIngredientsList = arr => {
   ulIngrList.append(...arr.map(el => renderIgngidientItem(el)));
 
   return ulIngrList;
-};
-
-const renderMessage = () => {
-  const finish = document.createElement('div');
-  const textTitle = document.createElement('p');
-  const textFinish = document.createElement('p');
-
-  finish.setAttribute('class', 'finish-order');
-  textTitle.setAttribute('class', 'text-finish');
-  textFinish.setAttribute('class', 'text-finish');
-
-  textTitle.innerText = 'Thank you!';
-  textFinish.innerText = 'Your order has been received!';
-
-  finish.append(textTitle, textFinish);
-  return finish;
 };
 
 const renderModal = ({
@@ -104,7 +89,6 @@ const renderModal = ({
     };
 
     orders.push(order);
-    console.log(orders);
     modal.replaceChildren();
     modal.append(closeBtn, renderMessage());
     modal.style.height = '200px';
