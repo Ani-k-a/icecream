@@ -1,3 +1,7 @@
+import { franchise } from "./franchise-orders";
+import { renderFranchiseForm } from "./franchise-form";
+import { renderMessage } from "../notification";
+
 const ref = {
   body: document.querySelector("body"),
   button: document.querySelector("#franchise-btn"),
@@ -20,31 +24,13 @@ const renderModalWindow = () => {
   text.setAttribute("class","franchise__text")
   text.innerText = "Due to the overwhelming volume of franchise requests we are not accepting new franchisee applications at this time. Once the application process resumes, we will contact you for further information. Please fill out the contact information below and we will reach out for additional information. We appreciate your patience."
 
-  /* render form */
-  const formBuyNow = document.createElement('form');
-  formBuyNow.setAttribute("class", "form-buynow franchise-form");
-  const inputName = document.createElement('input');
-  inputName.classList.add('input-buynow');
-  inputName.setAttribute('placeholder',"Name")
-  const inputPhone = document.createElement('input');
-  inputPhone.classList.add('input-buynow');
-  inputPhone.setAttribute('placeholder',"Phone");
-  const inputEmail = document.createElement('input');
-  inputEmail.classList.add('input-buynow');
-  inputEmail.setAttribute('placeholder',"Email");
-  const inputComment = document.createElement('textarea');
-  inputComment.setAttribute("class",'input-buynow input-comment');
-  inputComment.setAttribute("rows", "3");
-  inputComment.setAttribute('placeholder',"Comment");
-  const buyNowBtn = document.createElement('button')
-  buyNowBtn.setAttribute("class",'btn-buynow btn-solid');
-  buyNowBtn.innerText = "Submit" ;
-
   const onCloseBtnClick = () => {
     backDrop.remove();
     ref.body.classList.remove('disabled-scroll');
   };
   closeButton.addEventListener("click", onCloseBtnClick);
+
+  
 
   document.addEventListener('keydown', (event) => { 
     if (event.key === 'Escape') { 
@@ -57,10 +43,28 @@ const renderModalWindow = () => {
     onCloseBtnClick(); 
   });
 
-  formBuyNow.append(inputName,inputPhone,inputEmail,inputComment,buyNowBtn);
+  const formBuyNow = renderFranchiseForm()
+
+  const onFormSubmit = (event) => {
+    event.preventDefault();
+
+    const order = {
+      name: formBuyNow.name.value,
+      phone: formBuyNow.phone.value,
+      email: formBuyNow.email.value,
+      comment: formBuyNow.comment.value,
+    };
+
+    franchise.push(order);
+    modalBlock.replaceChildren();
+    modalBlock.append(closeButton, renderMessage());
+    modalBlock.style.height = '200px';
+  }
+
   modalBlock.append(closeButton, title, text, formBuyNow);
   modalWindow.append(modalBlock);
   backDrop.append(modalWindow);
+  formBuyNow.addEventListener("submit", onFormSubmit)
   ref.section.append(backDrop);
 };
 
@@ -68,7 +72,5 @@ const onOpenBtnClick = () => {
   renderModalWindow()
   ref.body.classList.add('disabled-scroll');
 };
-
-
 
 ref.button.addEventListener("click", onOpenBtnClick);

@@ -4,6 +4,7 @@
   margin-bottom: 20px;
 
   @include mq(tablet){
+    width: 448px;
     margin: 0 0 30px;
   }
 

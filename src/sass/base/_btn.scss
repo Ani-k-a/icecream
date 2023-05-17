@@ -4,7 +4,8 @@ button {
   font-weight: 600;
   font-size: 14px;
   color: $secondary-text-color;
-  @include mq(desktop) {
+  transition: 0.5s;
+  @include mq(desktop){
     padding: 10px 35px;
   }
 }

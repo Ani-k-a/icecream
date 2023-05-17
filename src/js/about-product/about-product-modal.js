@@ -36,8 +36,8 @@ const renderMessage = () => {
   textTitle.setAttribute('class', 'text-finish');
   textFinish.setAttribute('class', 'text-finish');
 
-  textTitle.innerText = 'Спасибо!';
-  textFinish.innerText = 'Ваш, заказ принят!';
+  textTitle.innerText = 'Thank you!';
+  textFinish.innerText = 'Your order has been received!';
 
   finish.append(textTitle, textFinish);
   return finish;
