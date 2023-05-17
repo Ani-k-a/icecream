@@ -1,39 +1,21 @@
 import { stateProd } from "./header-modal-buynow-state";
 import { renderForm } from "../renderForm";
+import { orders } from "../orders";
+import { createCardItem } from "./create-card-item";
 
 const ref = {
+    buttonHero: document.querySelector(".offer__btn"),
     button: document.querySelector('.header-btn'),
     header: document.querySelector('header'),
     body: document.querySelector('body'),
 };
-
-const createCardItem = (item) => {
-    const { title, img, color } = item;
-
-    const cardItem = document.createElement('li');
-    cardItem.classList.add('modal-buynow__item');
-    const imgEl = document.createElement('img');
-    imgEl.setAttribute('src', img);
-    imgEl.classList.add('modal-buynow__item--img');
-    const backCircle = document.createElement('div');
-    backCircle.classList.add('modal-buynow__item--background')
-    backCircle.style.background = color;
-    const containerItem = document.createElement('div');
-    containerItem.classList.add('modal-buynow__item--container')
-    containerItem.innerText = title;
-    containerItem.style.border = `${2}px solid${color}`
-
-    cardItem.append(imgEl, backCircle, containerItem)
-
-    return cardItem;
-}
 
 const createModal = () => {
     const backdrop = document.createElement('div');
     backdrop.classList.add('backdrop');
 
     const modalBuyNow = document.createElement('div');
-    modalBuyNow.classList.add('buynow-modal');
+    modalBuyNow.setAttribute("class",'buynow-modal');
     modalBuyNow.classList.add('modal')
 
     const modalBlock = document.createElement('div')
@@ -49,7 +31,8 @@ const createModal = () => {
 
     const form = renderForm();
 
-    modalItems.append(...stateProd.map(createCardItem));
+
+    modalItems.append(...stateProd.array.map(createCardItem));
     modalBlock.append(modalTitle, closeBtn, modalItems, form);
     modalBuyNow.append(modalBlock);
     backdrop.append(modalBuyNow);
@@ -74,6 +57,32 @@ const createModal = () => {
             removeModalWindow();
     });
 
+    const finishOrder = () => {
+        const finish = document.createElement('div');
+        const textFinish = document.createElement('p');
+        finish.setAttribute("class","finish-order");
+        textFinish.setAttribute("class","text-finish");
+        textFinish.innerText = "Спасибо! Ваш, заказ принят!"
+        finish.append(textFinish);
+        return finish
+    }    
+
+    const onFormSubmit = (event) => {
+        event.preventDefault();
+        const order = {
+            name: form.name.value,
+            phone: form.phone.value,
+            comment: form.comment.value,
+            productName: stateProd.checked       
+         };
+        orders.push(order);
+        modalBuyNow.replaceChildren();
+        modalBuyNow.append(closeBtn);
+        modalBuyNow.append(finishOrder()) 
+        modalBuyNow.style.height = "200px"
+        console.log(orders);
+    }
+    form.addEventListener("submit",onFormSubmit)
     closeBtn.addEventListener("click", onCloseBtnClick)
 }
 
@@ -83,3 +92,9 @@ const onOpenBtnClick = () => {
 }
 
 ref.button.addEventListener('click', onOpenBtnClick)
+ref.buttonHero.addEventListener('click',onOpenBtnClick)
+
+//очищять поля после сабмита 
+//сохранять бекграунд для заказа
+//сохранять выбор в обьект заказа
+// после сабмита удаляется форма и вместо формы , Ваш заказ принят!
