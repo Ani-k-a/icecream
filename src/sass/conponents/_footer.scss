@@ -152,6 +152,11 @@
   color: $primary-text-color;
 }
 
+.social__tel:hover,
+.social__tel:focus {
+  color: $yellow-color;
+}
+
 .copyright__line {
   border: 1px solid #e1e1e1;
 }

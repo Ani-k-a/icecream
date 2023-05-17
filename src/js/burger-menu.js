@@ -25,6 +25,17 @@ const createBtn = () => {
         btn.remove();
     }
     btn.addEventListener('click', onCloseBtnClick);
+
+    const onLinkClick = (ev) => {
+        console.log('link')
+        if (ev.target.tagName === 'A' || ev.target.tagName === 'BUTTON' || ev.target.tagName === 'IMG') { onCloseBtnClick() }
+    };
+
+    ref.header.addEventListener('click', (ev) => {
+        onLinkClick(ev);
+        ref.header.removeEventListener('click', onLinkClick, true);
+    })
+
     ref.header.append(btn);
 }
 
@@ -39,5 +50,7 @@ const onOpenBtnClick = () => {
     ref.body.classList.add('disabled-scroll');
     createBtn();
 }
+
+
 
 ref.openBtn.addEventListener('click', onOpenBtnClick);

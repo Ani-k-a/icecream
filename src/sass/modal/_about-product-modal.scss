@@ -1,0 +1,175 @@
+.about-modal {
+ 
+    overflow: scroll;
+    height: 90%;
+  
+}
+
+.modal-block,
+.ulNutrVal__item {
+  flex-direction: column;
+}
+
+.modal-block,
+.ulNutrVal__item,
+.ulNutrVal,
+.ulNutrVal__description {
+  display: flex;
+  align-items: center;
+}
+
+.modal__title {
+  font-family: $title-font;
+  font-size: 20px;
+  line-height: 1.4;
+  margin-bottom: 24px;
+
+  @include mq(tablet) {
+    font-size: 30px;
+  }
+}
+
+.picture_container {
+  position: relative;
+  height: 138px;
+  width: 132px;
+  margin-bottom: 24px;
+}
+
+.modal_picture {
+  border-radius: 50%;
+}
+
+.modalLayer {
+  position: absolute;
+  top: 6px;
+  height: 132px;
+  width: 132px;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.ulNutrVal {
+  flex-direction: row;
+  margin-bottom: 40px;
+
+    @include mq(tablet) {
+      margin-bottom: 50px;
+    }
+
+  &__item {
+    justify-content: center;
+    border-radius: 40px;
+    width: 48px;
+    
+
+    @include mq(tablet) {
+      width: 65px;
+      height: 90px;
+    }
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 10px;
+
+    @include mq(tablet) {
+      margin-right: 20px;
+    }
+  }
+
+  &__title,
+  &__description {
+    margin-bottom: 14px;
+    font-size: 12px;
+    font-weight: 500;
+    
+  }
+
+  &__title {
+    margin-bottom: 14px;
+    line-height: 1.25;
+    font-weight: 500;
+  }
+
+  &__description {
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    line-height: 1.4;
+    justify-content: center;
+    margin-bottom: 7px;
+
+    @include mq(tablet) {
+      width: 53px;
+    height: 53px;
+    }
+
+    
+  }
+}
+.modal_description,
+.ulIngrList__title,
+.ulIngrList__description .ulNutrVal__title .ulNutrVal__description {
+  font-family: $primary-font;
+}
+
+.modal_description,
+.ulNutrVal__description {
+  font-weight: 600;
+}
+
+.modal_description {
+  margin-bottom: 14px;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.ulIngrList {
+  width: 224px;
+  margin-bottom: 48px;
+
+  @include mq(tablet) {
+    width: 440px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 11px;
+  }
+
+  &__title,
+  &__description {
+    font-size: 14px;
+    line-height: 176%;
+    letter-spacing: 0.04em;
+  }
+}
+
+.green .ulNutrVal__description {
+  background-color: #aec6a5;
+}
+
+.yellow .ulNutrVal__description {
+  background-color: #efd478;
+}
+
+.orange .ulNutrVal__description {
+  background-color: #d6936d;
+}
+
+.green .ulNutrVal__item {
+  border: 2px solid #aec6a5;
+}
+
+.yellow .ulNutrVal__item {
+  border: 2px solid #efd478;
+}
+
+.orange .ulNutrVal__item {
+  border: 2px solid #d6936d;
+}

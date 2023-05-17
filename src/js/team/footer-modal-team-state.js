@@ -20,7 +20,7 @@ export const state = [
     {
         name: "Artem Buhaiov",
         position: "Developer",
-        img: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
+        img: "https://i.ibb.co/C77PFFY/IMG-6050-1.jpg",
         linkedin: "https://www.linkedin.com/in/artem-buhaiov/"
     },
 
