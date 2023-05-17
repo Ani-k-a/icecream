@@ -26,6 +26,8 @@
 
 .modal-block {
   position: relative;
+  max-width: 90%;
+  overflow-y: scroll ;
   padding: 28px;
   @include mq(tablet) {
     padding: 30px 60px;
