@@ -1,8 +1,4 @@
 .team-modal {
-  @include mq(mobile-only) {
-    overflow-y: scroll;
-    height: 90%;
-  }
   @include mq(tablet) {
     width: 600px;
   }

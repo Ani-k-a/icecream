@@ -42,7 +42,6 @@ const renderModal = ({
 
   const modal = document.createElement('div');
   modal.classList.add('modal');
-  modal.classList.add('about-modal');
 
   const block = document.createElement('div');
   block.classList.add('modal-block');
