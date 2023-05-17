@@ -8,10 +8,12 @@ export const renderForm = () => {
     inputName.classList.add('input-buynow');
     inputName.setAttribute('placeholder',"Name");
     inputName.setAttribute('name','name');
+    inputName.setAttribute('pattern',"^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$");
     inputName.setAttribute('required','');
     inputPhone.classList.add('input-buynow');
     inputPhone.setAttribute('placeholder',"Phone");
     inputPhone.setAttribute('name',"phone");
+    // inputPhone.setAttribute('pattern',"\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}");
     inputPhone.setAttribute('required',"");
     inputComment.setAttribute("class",'input-buynow input-comment');
     inputComment.setAttribute("rows", "3");
