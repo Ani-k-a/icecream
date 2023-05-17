@@ -1,8 +1,8 @@
 .about-modal {
- 
+  @include mq(mobile-only) {
     overflow: scroll;
     height: 90%;
-  
+  }
 }
 
 .modal-block,
@@ -53,15 +53,14 @@
   flex-direction: row;
   margin-bottom: 40px;
 
-    @include mq(tablet) {
-      margin-bottom: 50px;
-    }
+  @include mq(tablet) {
+    margin-bottom: 50px;
+  }
 
   &__item {
     justify-content: center;
     border-radius: 40px;
     width: 48px;
-    
 
     @include mq(tablet) {
       width: 65px;
@@ -82,7 +81,6 @@
     margin-bottom: 14px;
     font-size: 12px;
     font-weight: 500;
-    
   }
 
   &__title {
@@ -101,10 +99,8 @@
 
     @include mq(tablet) {
       width: 53px;
-    height: 53px;
+      height: 53px;
     }
-
-    
   }
 }
 .modal_description,
