@@ -3,13 +3,12 @@
 }
 
 .hero-container {
-  height: 100vh;
   margin: auto;
   position: relative;
-  min-height: 415px;
+  height: 415px;
 
   @include mq(mobile-only) {
-    min-height: 502px;
+    height: 502px;
     padding: 70px 20px 0px 20px;
   }
 
